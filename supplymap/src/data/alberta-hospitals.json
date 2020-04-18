@@ -1,0 +1,32 @@
+{
+    "hospitals":[
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 0,
+                "NAME" : "Alberta Children's Hospital",
+                "HEALTHREGION" : ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.148055555556,51.0744444444444]
+            }
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Foothills Medical Centre",
+                "HEALTHREGION" : ""
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.133055555556,51.0652777777778]
+            }
+            
+        }
+
+        
+    ]
+
+}
