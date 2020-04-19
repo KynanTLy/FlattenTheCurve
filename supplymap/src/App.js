@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker, Popup, Layer, Source } from "react-map-gl"
 
 // Import Data
-import * as parkData from "./data/skateboard-parks.json"
+import * as healthRegion from "./data/healthregion.geojson"
+import * as municipality from "./data/municipality.geojson"
 import * as hospitalData from "./data/alberta-hospitals.json"
 
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     const escListner = event => {
       if (event.key === "Escape"){
-        setselectedPark(null)
+        setselectedHosp(null)
       }
     }
     window.addEventListener("keydown", escListner)
@@ -38,10 +38,10 @@ function App() {
 
   // Use State
   const [selectedHosp, setselectedHosp] = useState(null)
-  const [selectedPark, setselectedPark] = useState(null)
 
   // Polygon for Alberta Health Region
   // Starts at the bottom left corner and goes clockwise
+  /*
   const data = {
     type: 'Feature',
     geometry: {
@@ -125,7 +125,7 @@ function App() {
       ]
     }
   }
-  
+  */
   
   return <div>
     <ReactMapGL
@@ -150,7 +150,46 @@ function App() {
           </Marker>
       ))}
 
-    <Source id="region" type="geojson" data={data} />
+    <Source id="healthregion" type="geojson" data={healthRegion} />
+    <Source id="municipality" type="geojson" data={municipality} />
+    <Layer
+        id="municipality"
+        type="line"
+        source="municipality"
+        paint={{
+          'line-color': '#2d03ff',
+          'line-width': 1,
+          'line-opacity': 0.8
+        }}
+      />
+
+    <Layer
+        id="healthregion"
+        type="line"
+        source="healthregion"
+        paint={{
+          'line-color': '#880000',
+          'line-width': 1,
+          'line-opacity': 0.8
+        }}
+      />
+
+     {selectedHosp ? (
+       <Popup 
+        latitude={selectedHosp.geometry.coordinates[1]} 
+        longitude={selectedHosp.geometry.coordinates[0]}
+        onClose={() => {setselectedHosp(null)}}>
+         <div>
+            <h2>{selectedHosp.properties.NAME}</h2>
+         </div>
+       </Popup>
+     ) : null} 
+    </ReactMapGL>
+  </div>
+}
+
+/*
+ <Source id="region" type="geojson" data={data} />
     <Source id="region2" type="geojson" data={data2} />
     <Source id="region3" type="geojson" data={data3} />
     <Source id="region4" type="geojson" data={data4} />
@@ -204,21 +243,6 @@ function App() {
           'fill-opacity': 0.8
         }}
       />
-
-     {selectedHosp ? (
-       <Popup 
-        latitude={selectedHosp.geometry.coordinates[1]} 
-        longitude={selectedHosp.geometry.coordinates[0]}
-        onClose={() => {setselectedHosp(null)}}>
-         <div>
-            <h2>{selectedHosp.properties.NAME}</h2>
-         </div>
-       </Popup>
-     ) : null} 
-    </ReactMapGL>
-  </div>
-}
-
-
+*/
 
 export default App;
