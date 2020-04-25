@@ -1,134 +1,127 @@
 // Imports
-import React, { useState, useEffect } from 'react'
-import ReactMapGL, { Marker, Popup, Layer, Source } from "react-map-gl"
+import React, { useRef, useEffect } from "react";
+import mapboxgl from "mapbox-gl";
 
-// Import Helper Files
-import Debugs from './consoleDebugs/geoJsonProperty'
-import Mods from './helperFunction/stringMod'
 
-// Import Data
-import * as healthRegion from "./data/healthregion.geojson"
-import * as hospitalData from "./data/alberta-hospitals.json"
+import "./App.scss";
+// Mapbox css - needed to make tooltips work later in this article
+import "mapbox-gl/dist/mapbox-gl.css";
 
-// Test
+// Data Import 
 import * as municipality from './data/municipality.json'
+import * as healthRegion from './data/healthregion.json'
+import * as albertaCaseDataM from './data/AlbertaCOVIDbyMunicipality.json'
 
-import './App.css';
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
+
+function mergeTwoJSON(){
+
+  var returnObj = {"data":[]}
+  var idMap = {};
+  // Iterate over arguments
+  for(var i = 0; i < municipality.data.length; i++) { 
+    //
+    for (var y = 0; y < albertaCaseDataM.default.length; y++){
+      
+      if (municipality.data[i].properties.LOCAL_NAME === albertaCaseDataM.default[y].local_geographic_area.toUpperCase()){
+        //console.log(`"${municipality.data[i].properties.LOCAL_NAME}" and "${albertaCaseDataM.default[y].local_geographic_area.toUpperCase()}"`)
+        idMap = municipality.data[i]
+        idMap['properties'] = Object.assign(idMap['properties'],albertaCaseDataM.default[y])
+        returnObj['data'].push(idMap)
+        idMap = {}
+      }
+      
+    }
+  }
+  //console.log(municipality.data.length)
+  //console.log(returnObj['data'].length)
+  return returnObj
+}
 
 function App() {
+  const mapboxElRef = useRef(null); // DOM element to render map
 
-  const [viewport, setViewport] = useState({
-    latitude: 51.049999,
-    longitude: -114.066666,
-    width: '100vw',
-    height: '100vh',
-    zoom:10,
-  })
-/*
-  _onClick = event => {
-    const feature = event.features && event.features[0];
+  //console.log(JSON.stringify(albertaCaseDataM))
+  console.log(mergeTwoJSON())
 
-    if (feature) {
-      window.alert(`Clicked layer ${feature.layer.id}`); // eslint-disable-line no-alert
-    }
-  };
-*/
+  const covidMapJSON = mergeTwoJSON()
 
-  // Pressing Esc close popup
+  // Initialize our map
   useEffect(() => {
-    const escListner = event => {
-      if (event.key === "Escape"){
-        setselectedHosp(null)
-      }
-    }
-    window.addEventListener("keydown", escListner)
-  
-    // When the app is unmount close event listner
-    return () => {
-      window.removeEventListener("keydown", escListner)
-    }
-  
-  }, [])
+    // You can store the map instance with useRef too
+    const map = new mapboxgl.Map({
+      container: mapboxElRef.current,
+      style: "mapbox://styles/kynantly/ck94r7t9m0e7b1iqpq4y20drq",
+      center: new mapboxgl.LngLat.convert([-114.066666,51.049999]), // initial geo location
+      zoom: 10 // initial zoom
+    });
 
-  // Use State
-  const [selectedHosp, setselectedHosp] = useState(null)
+    // When map is loaded 
+    map.once("load", function() {
+      // Add our SOURCE
+      // with id "points"
+      map.addSource("municipality", {
+        type: "geojson",
+        data: {
+          type: "FeatureCollection",
+          features: municipality.data
+        }
+      })
 
-
-  // Debug
-  //Debug_LocalLabel(testingData.data)
-  //Debugs.Debug_LayerID(municipality.data)
-  //console.log(Mods.turnJsonToArray(municipality.data))
-  
-
-  return <div>
-    <ReactMapGL
-      {...viewport}
-      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-      mapStyle="mapbox://styles/kynantly/ck94r7t9m0e7b1iqpq4y20drq"
-      onViewportChange={viewport => {setViewport(viewport)}}
-
-    >
-      {hospitalData.hospitals.map((hospitals) => (
-        <Marker 
-          key={hospitals.properties.HOSPITALID} 
-          latitude={hospitals.geometry.coordinates[1]}
-          longitude={hospitals.geometry.coordinates[0]}
-        >
-          <button className="marker-btn" 
-          onClick={(event) => {
-            event.preventDefault()
-            setselectedHosp(hospitals)
-          }}>
-            <img src="/Heart.png" alt="Health Facilities"/>
-          </button>
-          </Marker>
-      ))}
-
-      {municipality.data.map((data) => (
-        <Source id={data.properties.LocalLabel} type="geojson" data={data}>
-        <Layer
-          id = {data.properties.LocalLabel}
-          type = "fill"
-          source = {data.properties.LocalLabel}
-          paint={{
-            'fill-color' : '#2d03ff',
-            'fill-opacity' : 0.8
-          }}
-   
-        />
-        
-        </Source>
-        
-      ))}
+      map.addSource("municipalityCOVID", {
+        type: "geojson",
+        data: {
+          type: "FeatureCollection",
+          features: covidMapJSON.data
+        }
+      })
 
 
+      // Add municipality Border
+      map.addLayer({
+        id: "municipalityBorder",
+        source: "municipality", // this should be the id of the source
+        type: "line",
+        // paint properties
+        paint: {
+          'line-color' : '#2d03ff',
+          'line-opacity': 0.7
+        }
+      })
 
-     {selectedHosp ? (
-       <Popup 
-        latitude={selectedHosp.geometry.coordinates[1]} 
-        longitude={selectedHosp.geometry.coordinates[0]}
-        onClose={() => {setselectedHosp(null)}}>
-         <div>
-            <h2>{selectedHosp.properties.NAME}</h2>
-         </div>
-       </Popup>
-     ) : null} 
-    </ReactMapGL>
-  </div>
+      // Add our layer
+      map.addLayer({
+        id: "municipalityCOVID",
+        source: "municipalityCOVID", // this should be the id of the source
+        type: "fill",
+        // paint properties
+        paint: {
+          'fill-color' : '#880000',
+          'fill-opacity': [
+            "interpolate",
+            ["linear"],
+            ["get", "cases"],
+            1, 0.2,
+            50, 0.4,
+            100, 0.7
+          ]
+        }
+      })
+
+    })//end map.on load
+    
+    // Add navigation controls to the top right of the canvas
+    map.addControl(new mapboxgl.NavigationControl());
+  }, []);
+
+  return (
+    <div className="App">
+      <div className="mapContainer">
+        {/* Assigned Mapbox container */}
+        <div className="mapBox" ref={mapboxElRef} />
+      </div>
+    </div>
+  );
 }
 
 export default App;
-
-/*
-    <Source id="healthregion" type="geojson" data={healthRegion} />
-    <Layer
-        id="healthregion"
-        type="line"
-        source="healthregion"
-        paint={{
-          'line-color': '#880000',
-          'line-width': 1,
-          'line-opacity': 0.8
-        }}
-      />
-*/

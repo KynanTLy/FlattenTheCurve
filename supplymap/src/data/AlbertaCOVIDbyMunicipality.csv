@@ -1,0 +1,134 @@
+local_geographic_area,cases,active,recovered,death_s
+Airdrie,23,9,14,0
+Athabasca,1,1,0,0
+Banff,4,2,2,0
+Barrhead,2,0,2,0
+Beaumont,4,0,4,0
+Beaverlodge,0,0,0,0
+Black Diamond,9,1,8,0
+Bonnyville,7,0,7,0
+Boyle,0,0,0,0
+Calgary - Centre,48,19,29,0
+Calgary - Centre North,46,25,18,3
+Calgary - Centre West,49,20,27,2
+Calgary - East,126,106,17,3
+Calgary - Elbow,24,15,9,0
+Calgary - Fish Creek,101,53,47,1
+Calgary - Lower Ne,196,138,57,1
+Calgary - Lower Nw,49,24,25,0
+Calgary - North,85,48,37,0
+Calgary - Nosehill,66,24,40,2
+Calgary - Se,216,80,120,16
+Calgary - Sw,435,358,73,4
+Calgary - Upper Ne,208,118,86,4
+Calgary - Upper Nw,93,22,70,1
+Calgary - West,64,27,36,1
+Calgary - West Bow,13,6,5,2
+Camrose & County,3,0,2,1
+Canmore,16,2,14,0
+Cardston-Kainai,0,0,0,0
+Castor/Coronation/Consort,0,0,0,0
+Chestermere,20,9,11,0
+City Of Grande Prairie,2,0,2,0
+Claresholm,2,1,1,0
+Cochrane-Springbank,15,3,12,0
+Cold Lake,3,1,2,0
+County Of Forty Mile,2,0,2,0
+County Of Lethbridge,1,1,0,0
+County Of Warner,0,0,0,0
+Crossfield,3,2,1,0
+Crowsnest Pass,0,0,0,0
+Cypress County,8,7,1,0
+Didsbury,3,0,3,0
+Drayton Valley,0,0,0,0
+Edmonton - Abbottsfield,6,1,5,0
+Edmonton - Bonnie Doon,30,3,27,0
+Edmonton - Castle Downs,39,11,28,0
+Edmonton - Duggan,18,2,16,0
+Edmonton - Eastwood,13,5,6,2
+Edmonton - Jasper Place,5,2,3,0
+Edmonton - Mill Woods South & East,16,0,15,1
+Edmonton - Mill Woods West,9,5,4,0
+Edmonton - Ne,28,12,16,0
+Edmonton - Northgate,44,20,21,3
+Edmonton - Rutherford,20,4,16,0
+Edmonton - Twin Brooks,26,3,23,0
+Edmonton - West Jasper Place,34,7,25,2
+Edmonton - Woodcroft East,15,3,12,0
+Edmonton - Woodcroft West,12,4,8,0
+Edson,0,0,0,0
+Fairview,1,0,0,1
+Falher,50,19,21,10
+Flagstaff County,0,0,0,0
+Fort Macleod,0,0,0,0
+Fort Mcmurray,11,7,4,0
+Fort Saskatchewan,8,3,5,0
+Fox Creek,0,0,0,0
+Frog Lake,0,0,0,0
+Grande Cache,0,0,0,0
+Grande Prairie County,5,4,1,0
+High Level,10,9,1,0
+High Prairie,22,5,15,2
+High River,352,334,17,1
+Hinton,3,0,3,0
+Innisfail,1,0,1,0
+Jasper,8,1,6,1
+Lac La Biche,0,0,0,0
+Lacombe,2,0,2,0
+Lamont County,0,0,0,0
+Leduc & Devon,30,6,23,1
+Lethbridge - North,0,0,0,0
+Lethbridge - South,5,2,3,0
+Lethbridge - West,7,2,5,0
+Manning,0,0,0,0
+Mayerthorpe,3,1,2,0
+Md Of Provost,0,0,0,0
+Md Of Wainwright,1,1,0,0
+Medicine Hat,19,9,10,0
+NA,32,26,6,0
+Newell,259,259,0,0
+Okotoks-Priddis,111,105,5,1
+Olds,2,0,2,0
+Oyen,0,0,0,0
+Peace River,11,1,10,0
+Pincher Creek,0,0,0,0
+Planning & Special Area 2,0,0,0,0
+Ponoka,2,1,1,0
+Red Deer - East,21,1,20,0
+Red Deer - North,7,0,7,0
+Red Deer - Sw,4,0,4,0
+Red Deer County,14,1,13,0
+Rimbey,0,0,0,0
+Rocky Mountain House,1,1,0,0
+Sherwood Park,21,2,19,0
+Slave Lake,5,1,4,0
+Smoky Lake,0,0,0,0
+Spirit River,0,0,0,0
+St. Albert,27,3,24,0
+St. Paul,0,0,0,0
+Starland County/Drumheller,0,0,0,0
+Stettler & County,4,3,1,0
+Stony Plain & Spruce Grove,8,2,6,0
+Strathcona County Excluding Sherwood Park,9,1,8,0
+Strathmore,12,3,9,0
+Sturgeon County East,0,0,0,0
+Sturgeon County West,11,2,9,0
+Sundre,1,0,1,0
+Swan Hills,0,0,0,0
+Sylvan Lake,0,0,0,0
+Taber Md,2,0,2,0
+Thorsby,3,1,2,0
+Three Hills/Highway 21,2,1,1,0
+Tofield,2,0,2,0
+Two Hills County,0,0,0,0
+Valleyview,2,1,1,0
+Vegreville/Minburn County,2,0,2,0
+Vermilion River County,3,1,2,0
+Viking,0,0,0,0
+Vulcan,0,0,0,0
+Wabasca,0,0,0,0
+Westlock,2,1,1,0
+Westview Excluding Stony Plain & Spruce Grove,12,1,11,0
+Wetaskiwin County,7,0,7,0
+Whitecourt,0,0,0,0
+Wood Buffalo,2,0,2,0
