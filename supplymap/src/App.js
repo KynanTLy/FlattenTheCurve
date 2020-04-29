@@ -21,9 +21,13 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
 function find_center_point(coordinatesList) {
 
   // Check for nested Coordinates and flatten them
-  console.log(`List: ${coordinatesList}`)
+  if (coordinatesList[0].length !== 2){
+    coordinatesList = coordinatesList[0]
+  }
 
   var first = coordinatesList[0] 
+  //console.log(`First: ${first}`)
+
 
   var last = coordinatesList[coordinatesList.length - 1]
   if (first[0] != last[0] || first[1] != last[1]) coordinatesList.push(first);
@@ -42,9 +46,9 @@ function find_center_point(coordinatesList) {
      y += (p1[1] + p2[1] - 2 * first[1]) * f;
   }
   f = twicearea * 3;
-  console.log(`x: ${x} y: ${y} f: ${f}`)
+  //console.log(`x: ${x} y: ${y} f: ${f}`)
   var returnJSON = {"center_point":[(x/f + first[0]), (y/f + first[1])]}
-  console.log((returnJSON['center_point']))
+  //console.log((returnJSON['center_point']))
   return returnJSON
 }
 
@@ -84,7 +88,7 @@ function App() {
   console.log("Start")
   municipalitytest.data.map((data) =>(
     data.properties.LOCAL_NAME === "HIGH PRAIRIE" ? 
-      console.log(`Name: ${data.properties.LOCAL_NAME} Center: ${find_center_point(data.geometry['coordinates'])}`) 
+      console.log(`Name: ${data.properties.LOCAL_NAME} Center: ${find_center_point(data.geometry.coordinates[0])}`) 
      : console.log("")
   
   ))
@@ -98,6 +102,7 @@ function App() {
   municipalitytest.data.map((data) => (
     data['properties'] = Object.assign(data['properties'],find_center_point(data.geometry.coordinates[0]))
   ))
+  
   
   //console.log(municipalitytest.data[0])
 
@@ -197,7 +202,8 @@ function App() {
         // Properties to display
         const activeCase  = e.features[0].properties.active
         const recoverCase = e.features[0].properties.recovered
-        const mortalityRate = ((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)
+        const mortalityRate = isNaN(((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)
+
         
         // Popup properties
         const popUpHTML = 
@@ -208,12 +214,12 @@ function App() {
 
         //const popLoc = map.LngLat.convert(e.features[0].properties.center_point.slice())
         
-        /*
+        
         popup
           .setLngLat(mapboxgl.LngLat.convert(JSON.parse(e.features[0].properties.center_point)))
           .setHTML(popUpHTML)
           .addTo(map);
-        */
+        
         //console.log(JSON.parse(e.features[0].properties.center_point))
       }
 
