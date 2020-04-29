@@ -239,8 +239,17 @@ function App() {
         {/* Assigned Mapbox container */}
         <div className="mapBox" ref={mapboxElRef} />
       </div>
+      <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
+      <div className="legend">
+        <h4>Active Case</h4>
+        <div><span style={{background: "ffffb2"}} ></span>1</div>
+        <div><span style={{background: "#feb24c"}} ></span>5</div>
+        <div><span style={{background: "#fc4e2a"}} ></span>50</div>
+        <div><span style={{background: "#b10026"}} ></span>100</div>
+      </div>
     </div>
   );
 }
+
 
 export default App;
