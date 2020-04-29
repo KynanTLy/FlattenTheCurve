@@ -12,7 +12,41 @@ import * as municipality from './data/municipality.json'
 import * as healthRegion from './data/healthregion.json'
 import * as albertaCaseDataM from './data/AlbertaCOVIDbyMunicipality.json'
 
+import * as municipalitytest from './data/municipality.json'
+
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
+
+
+
+function find_center_point(coordinatesList) {
+
+  // Check for nested Coordinates and flatten them
+  console.log(`List: ${coordinatesList}`)
+
+  var first = coordinatesList[0] 
+
+  var last = coordinatesList[coordinatesList.length - 1]
+  if (first[0] != last[0] || first[1] != last[1]) coordinatesList.push(first);
+  var twicearea =0
+  var x = 0
+  var y = 0 
+  var numPoints = coordinatesList.length
+  var p1, p2, f;
+  //console.log(`${twicearea} ${x} ${y}`)
+  for ( var i=0, j=numPoints-1 ; i<numPoints ; j=i++ ) {
+     p1 = coordinatesList[i]; p2 = coordinatesList[j];
+     //console.log(`p1: ${p1} p2: ${p2}`)
+     f = (p1[1] - first[1]) * (p2[0] - first[0]) - (p2[1] - first[1]) * (p1[0] - first[0]);
+     twicearea += f;
+     x += (p1[0] + p2[0] - 2 * first[0]) * f;
+     y += (p1[1] + p2[1] - 2 * first[1]) * f;
+  }
+  f = twicearea * 3;
+  console.log(`x: ${x} y: ${y} f: ${f}`)
+  var returnJSON = {"center_point":[(x/f + first[0]), (y/f + first[1])]}
+  console.log((returnJSON['center_point']))
+  return returnJSON
+}
 
 function mergeTwoJSON(){
 
@@ -45,6 +79,29 @@ function App() {
   console.log(mergeTwoJSON())
 
   const covidMapJSON = mergeTwoJSON()
+ 
+  /*
+  console.log("Start")
+  municipalitytest.data.map((data) =>(
+    data.properties.LOCAL_NAME === "HIGH PRAIRIE" ? 
+      console.log(`Name: ${data.properties.LOCAL_NAME} Center: ${find_center_point(data.geometry['coordinates'])}`) 
+     : console.log("")
+  
+  ))
+  console.log("End")
+  */
+  //const test = find_center_point(municipality.data[0].geometry.coordinates[0])
+  //console.log(test)
+  
+  
+  
+  municipalitytest.data.map((data) => (
+    data['properties'] = Object.assign(data['properties'],find_center_point(data.geometry.coordinates[0]))
+  ))
+  
+  //console.log(municipalitytest.data[0])
+
+  //console.log(municipality.data[0].geometry.coordinates)
 
   // Initialize our map
   useEffect(() => {
@@ -96,17 +153,73 @@ function App() {
         type: "fill",
         // paint properties
         paint: {
-          'fill-color' : '#880000',
+          'fill-color' : [
+            "interpolate",
+            ["linear"],
+            ["get", "active"],
+            1, "#ffffb2",
+            5, '#feb24c',
+            50, '#fc4e2a',
+            100, '#b10026'
+          ],
           'fill-opacity': [
             "interpolate",
             ["linear"],
-            ["get", "cases"],
-            1, 0.2,
+            ["get", "active"],
+            0, 0,
+            5, 0.2,
             50, 0.4,
             100, 0.7
           ]
         }
       })
+
+      // Add Hover Effect
+      const popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+      });
+
+      // Municipality Name
+      let oldhoverMunID
+      
+      // Mouse move event
+      map.on("mousemove", "municipalityCOVID", e => {
+
+        // Get ID
+      const hoverMunID = e.features[0].properties.local_geographic_area;
+      
+      // Prevent Repeats
+      if (hoverMunID !== oldhoverMunID) {
+        // Set new ID
+        oldhoverMunID = hoverMunID;
+      
+        // Properties to display
+        const activeCase  = e.features[0].properties.active
+        const recoverCase = e.features[0].properties.recovered
+        const mortalityRate = ((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)
+        
+        // Popup properties
+        const popUpHTML = 
+              `<p>Location: <b>${hoverMunID}</b></p>
+              <p>Active: <b>${activeCase}</b></p>
+              <p>Recovered: <b>${recoverCase}</b></p>
+              <p>Mortality Rate: <b>${mortalityRate}%</b></p>`
+
+        //const popLoc = map.LngLat.convert(e.features[0].properties.center_point.slice())
+        
+        /*
+        popup
+          .setLngLat(mapboxgl.LngLat.convert(JSON.parse(e.features[0].properties.center_point)))
+          .setHTML(popUpHTML)
+          .addTo(map);
+        */
+        //console.log(JSON.parse(e.features[0].properties.center_point))
+      }
+
+      })//end Mouse Event 
+
+
 
     })//end map.on load
     
