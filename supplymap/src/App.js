@@ -1,7 +1,7 @@
 // Imports
-import React, { useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
-
+import Parser from 'html-react-parser'
 
 import "./App.scss";
 // Mapbox css - needed to make tooltips work later in this article
@@ -79,26 +79,23 @@ function mergeTwoJSON(){
 function App() {
   const mapboxElRef = useRef(null); // DOM element to render map
 
+  const [selectedMunDetail, setselectedMunDetail] = useState('')
+
   //console.log(JSON.stringify(albertaCaseDataM))
   console.log(mergeTwoJSON())
 
   const covidMapJSON = mergeTwoJSON()
- 
-  /*
-  console.log("Start")
-  municipalitytest.data.map((data) =>(
-    data.properties.LOCAL_NAME === "HIGH PRAIRIE" ? 
-      console.log(`Name: ${data.properties.LOCAL_NAME} Center: ${find_center_point(data.geometry.coordinates[0])}`) 
-     : console.log("")
+
+  // Legend Information
   
-  ))
-  console.log("End")
-  */
-  //const test = find_center_point(municipality.data[0].geometry.coordinates[0])
-  //console.log(test)
-  
-  
-  
+  var legendCaseRange =   ['1-4','5-49','50-99','100+']
+  var legendColourRange = ['#ffffb2','#feb24c','#fc4e2a','#b10026'] 
+  var legendBuilder = '<h4>Active COVID Case</h4>'
+  for (var i = 0; i < legendCaseRange.length; i++){
+    legendBuilder = legendBuilder + `<div><span style="background-color:${legendColourRange[i]};"></span>${legendCaseRange[i]}</div>`
+  }
+  console.log(legendBuilder)
+  const legend = legendBuilder
   municipalitytest.data.map((data) => (
     data['properties'] = Object.assign(data['properties'],find_center_point(data.geometry.coordinates[0]))
   ))
@@ -204,7 +201,16 @@ function App() {
         const recoverCase = e.features[0].properties.recovered
         const mortalityRate = isNaN(((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)
 
-        
+        // Display to municipality detail screen
+        setselectedMunDetail(`
+              <p>Location: ${hoverMunID}</p>
+              <p>Active: <b>${activeCase}</b></p>
+              <p>Recovered: <b>${recoverCase}</b></p>
+              <p>Mortality Rate: <b>${mortalityRate}%</b></p>
+              `)
+       
+
+
         // Popup properties
         const popUpHTML = 
               `<p>Location: <b>${hoverMunID}</b></p>
@@ -226,27 +232,27 @@ function App() {
       })//end Mouse Event 
 
 
-
+      
     })//end map.on load
     
     // Add navigation controls to the top right of the canvas
     map.addControl(new mapboxgl.NavigationControl());
-  }, []);
+  }, [])// End use effect
 
+  console.log(selectedMunDetail)
   return (
     <div className="App">
       <div className="mapContainer">
         {/* Assigned Mapbox container */}
         <div className="mapBox" ref={mapboxElRef} />
       </div>
-      <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
-      <div className="legend">
-        <h4>Active Case</h4>
-        <div><span style={{background: "ffffb2"}} ></span>1</div>
-        <div><span style={{background: "#feb24c"}} ></span>5</div>
-        <div><span style={{background: "#fc4e2a"}} ></span>50</div>
-        <div><span style={{background: "#b10026"}} ></span>100</div>
+      <div className="map-overlay" id='features'>
+        <h2>COVID Statistics</h2>
+        {Parser(selectedMunDetail)}
       </div>
+  <div className="legend">
+    {Parser(legend)}
+  </div>
     </div>
   );
 }

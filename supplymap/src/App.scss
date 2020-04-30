@@ -51,13 +51,27 @@
     }
   }
 
-  .map-overlay .map-overlay-inner {
+  .map-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
     background-color: #fff;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin-right: 20px;
+    font-family: Arial, sans-serif;
+    overflow: auto;
     border-radius: 3px;
-    padding: 10px;
-    margin-bottom: 10px;
-    }
+  }
+
+  .map-overlay h2 {
+    margin: 10px;
+    font-size: 1.2em;
+  }
+
+  .map-overlay p {
+    font-size: 0.85em;
+    margin: 10px;
+    text-align: left;
+  }
 
   .legend {
     background-color: #fff;
