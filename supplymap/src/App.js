@@ -11,6 +11,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import * as municipality from './data/municipality.json'
 import * as healthRegion from './data/healthregion.json'
 import * as albertaCaseDataM from './data/AlbertaCOVIDbyMunicipality.json'
+import * as albertaCaseDataM2 from './data/AlbertaCOVIDCase.json'
 
 import * as municipalitytest from './data/municipality.json'
 
@@ -52,19 +53,19 @@ function find_center_point(coordinatesList) {
   return returnJSON
 }
 
-function mergeTwoJSON(){
+function mergeAlbertaCases(){
 
   var returnObj = {"data":[]}
   var idMap = {};
   // Iterate over arguments
   for(var i = 0; i < municipality.data.length; i++) { 
     //
-    for (var y = 0; y < albertaCaseDataM.default.length; y++){
+    for (var y = 0; y < albertaCaseDataM2.default.length; y++){
       
-      if (municipality.data[i].properties.LOCAL_NAME === albertaCaseDataM.default[y].local_geographic_area.toUpperCase()){
+      if (municipality.data[i].properties.LOCAL_NAME === albertaCaseDataM2.default[y].local_geographic_area.toUpperCase()){
         //console.log(`"${municipality.data[i].properties.LOCAL_NAME}" and "${albertaCaseDataM.default[y].local_geographic_area.toUpperCase()}"`)
         idMap = municipality.data[i]
-        idMap['properties'] = Object.assign(idMap['properties'],albertaCaseDataM.default[y])
+        idMap['properties'] = Object.assign(idMap['properties'],albertaCaseDataM2.default[y])
         returnObj['data'].push(idMap)
         idMap = {}
       }
@@ -76,20 +77,45 @@ function mergeTwoJSON(){
   return returnObj
 }
 
+function findLegendRange(data){
+  //console.log(caseList.properties)
+  var caseList = []
+  data.map((region) => (caseList.push(region.properties.cases)))
+  //console.log(`List: ${Math.max(...caseList)}`)
+ 
+  
+  caseList.forEach(function(item, i) {
+    caseList[i] = Math.ceil(item / 10) * 10;
+  });
+  caseList.sort(function(a, b){return a-b})
+  caseList = [...new Set(caseList)]
+  var minRange = caseList[0]
+  var quartRange = caseList[Math.ceil((caseList.length-1)/4)]
+  var halfRange = caseList[(Math.ceil((caseList.length-1)/2))]
+  var quarter3Range = caseList[Math.ceil((caseList.length-1)/4)*3]
+  var maxRange = Math.ceil(caseList[caseList.length-1] / 50) * 50
+  return [
+    `${minRange}-${quartRange-1}`, 
+    `${quartRange}-${halfRange-1}`,
+    `${halfRange}-${quarter3Range-1}`,
+    `${quarter3Range}-${maxRange-1}`,
+    `${maxRange}+`
+  ]
+}
+
 function App() {
   const mapboxElRef = useRef(null); // DOM element to render map
 
   const [selectedMunDetail, setselectedMunDetail] = useState('')
 
-  //console.log(JSON.stringify(albertaCaseDataM))
-  console.log(mergeTwoJSON())
 
-  const covidMapJSON = mergeTwoJSON()
+  const covidMapJSON = mergeAlbertaCases()
+
 
   // Legend Information
   
-  var legendCaseRange =   ['1-4','5-49','50-99','100+']
-  var legendColourRange = ['#ffffb2','#feb24c','#fc4e2a','#b10026'] 
+  var legendCaseRange = findLegendRange(covidMapJSON.data)
+  var legendColourRange = ['#ffffb2','#feb24c','#fc4e2a','#fc4e2a','#b10026'] 
   var legendBuilder = '<h4>Active COVID Case</h4>'
   for (var i = 0; i < legendCaseRange.length; i++){
     legendBuilder = legendBuilder + `<div><span style="background-color:${legendColourRange[i]};"></span>${legendCaseRange[i]}</div>`
@@ -198,14 +224,14 @@ function App() {
       
         // Properties to display
         const activeCase  = e.features[0].properties.active
-        const recoverCase = e.features[0].properties.recovered
+        const recoverCase = isNaN(((e.features[0].properties.recovered / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.recovered / e.features[0].properties.cases) * 100).toFixed(2)
         const mortalityRate = isNaN(((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)
 
         // Display to municipality detail screen
         setselectedMunDetail(`
               <p>Location: ${hoverMunID}</p>
               <p>Active: <b>${activeCase}</b></p>
-              <p>Recovered: <b>${recoverCase}</b></p>
+              <p>Recovery  Rate: <b>${recoverCase}%</b></p>
               <p>Mortality Rate: <b>${mortalityRate}%</b></p>
               `)
        

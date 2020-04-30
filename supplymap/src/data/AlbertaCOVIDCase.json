@@ -1,0 +1,933 @@
+[
+  {
+    "local_geographic_area": "Crowsnest Pass",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Pincher Creek",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Fort Macleod",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Cardston-Kainai",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "County Of Lethbridge",
+    "cases": 1,
+    "active": 0,
+    "recovered": 1,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Taber Md",
+    "cases": 2,
+    "active": 0,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "County Of Warner",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "County Of Forty Mile",
+    "cases": 2,
+    "active": 0,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Newell",
+    "cases": 629,
+    "active": 609,
+    "recovered": 16,
+    "death_s": 4
+  },
+  {
+    "local_geographic_area": "Oyen",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Cypress County",
+    "cases": 8,
+    "active": 3,
+    "recovered": 5,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Medicine Hat",
+    "cases": 27,
+    "active": 16,
+    "recovered": 11,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Lethbridge - West",
+    "cases": 7,
+    "active": 2,
+    "recovered": 5,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Lethbridge - North",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Lethbridge - South",
+    "cases": 6,
+    "active": 3,
+    "recovered": 3,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Calgary - Upper Nw",
+    "cases": 109,
+    "active": 33,
+    "recovered": 75,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Calgary - North",
+    "cases": 100,
+    "active": 48,
+    "recovered": 52,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Calgary - Nosehill",
+    "cases": 86,
+    "active": 37,
+    "recovered": 47,
+    "death_s": 2
+  },
+  {
+    "local_geographic_area": "Calgary - Lower Nw",
+    "cases": 59,
+    "active": 26,
+    "recovered": 33,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Calgary - West Bow",
+    "cases": 15,
+    "active": 4,
+    "recovered": 9,
+    "death_s": 2
+  },
+  {
+    "local_geographic_area": "Calgary - Centre North",
+    "cases": 72,
+    "active": 47,
+    "recovered": 20,
+    "death_s": 5
+  },
+  {
+    "local_geographic_area": "Calgary - Upper Ne",
+    "cases": 348,
+    "active": 240,
+    "recovered": 104,
+    "death_s": 4
+  },
+  {
+    "local_geographic_area": "Calgary - Lower Ne",
+    "cases": 301,
+    "active": 199,
+    "recovered": 101,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Calgary - East",
+    "cases": 220,
+    "active": 170,
+    "recovered": 46,
+    "death_s": 4
+  },
+  {
+    "local_geographic_area": "Calgary - Se",
+    "cases": 259,
+    "active": 100,
+    "recovered": 143,
+    "death_s": 16
+  },
+  {
+    "local_geographic_area": "Calgary - West",
+    "cases": 77,
+    "active": 31,
+    "recovered": 45,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Calgary - Centre",
+    "cases": 78,
+    "active": 45,
+    "recovered": 32,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Calgary - Centre West",
+    "cases": 70,
+    "active": 38,
+    "recovered": 30,
+    "death_s": 2
+  },
+  {
+    "local_geographic_area": "Calgary - Elbow",
+    "cases": 41,
+    "active": 26,
+    "recovered": 14,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Calgary - Fish Creek",
+    "cases": 155,
+    "active": 89,
+    "recovered": 64,
+    "death_s": 2
+  },
+  {
+    "local_geographic_area": "Calgary - Sw",
+    "cases": 592,
+    "active": 437,
+    "recovered": 151,
+    "death_s": 4
+  },
+  {
+    "local_geographic_area": "Okotoks-Priddis",
+    "cases": 145,
+    "active": 104,
+    "recovered": 40,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Black Diamond",
+    "cases": 24,
+    "active": 15,
+    "recovered": 9,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "High River",
+    "cases": 494,
+    "active": 370,
+    "recovered": 121,
+    "death_s": 3
+  },
+  {
+    "local_geographic_area": "Claresholm",
+    "cases": 2,
+    "active": 1,
+    "recovered": 1,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Vulcan",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Airdrie",
+    "cases": 27,
+    "active": 8,
+    "recovered": 19,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Chestermere",
+    "cases": 23,
+    "active": 12,
+    "recovered": 11,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Strathmore",
+    "cases": 13,
+    "active": 4,
+    "recovered": 9,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Crossfield",
+    "cases": 4,
+    "active": 2,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Didsbury",
+    "cases": 3,
+    "active": 0,
+    "recovered": 3,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Cochrane-Springbank",
+    "cases": 18,
+    "active": 6,
+    "recovered": 12,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Canmore",
+    "cases": 17,
+    "active": 2,
+    "recovered": 15,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Banff",
+    "cases": 4,
+    "active": 2,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Rocky Mountain House",
+    "cases": 1,
+    "active": 1,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Drayton Valley",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Sundre",
+    "cases": 1,
+    "active": 0,
+    "recovered": 1,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Olds",
+    "cases": 2,
+    "active": 0,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Innisfail",
+    "cases": 1,
+    "active": 0,
+    "recovered": 1,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Red Deer County",
+    "cases": 14,
+    "active": 1,
+    "recovered": 13,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Sylvan Lake",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Three Hills/Highway 21",
+    "cases": 2,
+    "active": 1,
+    "recovered": 1,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Starland County/Drumheller",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Planning & Special Area 2",
+    "cases": 1,
+    "active": 1,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Stettler & County",
+    "cases": 4,
+    "active": 1,
+    "recovered": 3,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Castor/Coronation/Consort",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Wetaskiwin County",
+    "cases": 8,
+    "active": 1,
+    "recovered": 7,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Ponoka",
+    "cases": 2,
+    "active": 1,
+    "recovered": 1,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Rimbey",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Lacombe",
+    "cases": 2,
+    "active": 0,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Camrose & County",
+    "cases": 3,
+    "active": 0,
+    "recovered": 2,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Tofield",
+    "cases": 2,
+    "active": 0,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Viking",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Flagstaff County",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Md Of Provost",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Md Of Wainwright",
+    "cases": 1,
+    "active": 0,
+    "recovered": 1,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Lamont County",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Two Hills County",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Vegreville/Minburn County",
+    "cases": 2,
+    "active": 0,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Vermilion River County",
+    "cases": 3,
+    "active": 1,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Red Deer - North",
+    "cases": 8,
+    "active": 1,
+    "recovered": 7,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Red Deer - Sw",
+    "cases": 5,
+    "active": 1,
+    "recovered": 4,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Red Deer - East",
+    "cases": 22,
+    "active": 3,
+    "recovered": 19,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Edmonton - Woodcroft East",
+    "cases": 18,
+    "active": 5,
+    "recovered": 13,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Edmonton - Woodcroft West",
+    "cases": 13,
+    "active": 5,
+    "recovered": 8,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Edmonton - Jasper Place",
+    "cases": 5,
+    "active": 1,
+    "recovered": 4,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Edmonton - West Jasper Place",
+    "cases": 37,
+    "active": 7,
+    "recovered": 28,
+    "death_s": 2
+  },
+  {
+    "local_geographic_area": "Edmonton - Castle Downs",
+    "cases": 41,
+    "active": 11,
+    "recovered": 29,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Edmonton - Northgate",
+    "cases": 49,
+    "active": 16,
+    "recovered": 29,
+    "death_s": 4
+  },
+  {
+    "local_geographic_area": "Edmonton - Eastwood",
+    "cases": 18,
+    "active": 10,
+    "recovered": 6,
+    "death_s": 2
+  },
+  {
+    "local_geographic_area": "Edmonton - Abbottsfield",
+    "cases": 6,
+    "active": 0,
+    "recovered": 6,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Edmonton - Ne",
+    "cases": 29,
+    "active": 9,
+    "recovered": 20,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Edmonton - Bonnie Doon",
+    "cases": 32,
+    "active": 5,
+    "recovered": 27,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Edmonton - Mill Woods West",
+    "cases": 10,
+    "active": 5,
+    "recovered": 5,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Edmonton - Mill Woods South & East",
+    "cases": 17,
+    "active": 1,
+    "recovered": 15,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Edmonton - Duggan",
+    "cases": 19,
+    "active": 3,
+    "recovered": 16,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Edmonton - Twin Brooks",
+    "cases": 26,
+    "active": 2,
+    "recovered": 24,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Edmonton - Rutherford",
+    "cases": 22,
+    "active": 5,
+    "recovered": 17,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Sturgeon County West",
+    "cases": 12,
+    "active": 2,
+    "recovered": 10,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Sturgeon County East",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Fort Saskatchewan",
+    "cases": 8,
+    "active": 3,
+    "recovered": 5,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Sherwood Park",
+    "cases": 21,
+    "active": 2,
+    "recovered": 19,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Strathcona County Excluding Sherwood Park",
+    "cases": 10,
+    "active": 2,
+    "recovered": 8,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Beaumont",
+    "cases": 5,
+    "active": 1,
+    "recovered": 4,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Leduc & Devon",
+    "cases": 31,
+    "active": 7,
+    "recovered": 23,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Thorsby",
+    "cases": 3,
+    "active": 0,
+    "recovered": 3,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Stony Plain & Spruce Grove",
+    "cases": 8,
+    "active": 1,
+    "recovered": 7,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Westview Excluding Stony Plain & Spruce Grove",
+    "cases": 12,
+    "active": 0,
+    "recovered": 12,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "St. Albert",
+    "cases": 30,
+    "active": 6,
+    "recovered": 24,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Jasper",
+    "cases": 9,
+    "active": 1,
+    "recovered": 7,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Hinton",
+    "cases": 3,
+    "active": 0,
+    "recovered": 3,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Edson",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Whitecourt",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Mayerthorpe",
+    "cases": 4,
+    "active": 2,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Barrhead",
+    "cases": 2,
+    "active": 0,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Westlock",
+    "cases": 2,
+    "active": 0,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Frog Lake",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "St. Paul",
+    "cases": 2,
+    "active": 2,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Smoky Lake",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Cold Lake",
+    "cases": 4,
+    "active": 2,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Bonnyville",
+    "cases": 7,
+    "active": 0,
+    "recovered": 7,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Boyle",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Athabasca",
+    "cases": 2,
+    "active": 2,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Lac La Biche",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Grande Cache",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Fox Creek",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Valleyview",
+    "cases": 2,
+    "active": 1,
+    "recovered": 1,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Beaverlodge",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Grande Prairie County",
+    "cases": 5,
+    "active": 3,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Swan Hills",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Slave Lake",
+    "cases": 5,
+    "active": 1,
+    "recovered": 4,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Wabasca",
+    "cases": 1,
+    "active": 1,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "High Prairie",
+    "cases": 33,
+    "active": 14,
+    "recovered": 17,
+    "death_s": 2
+  },
+  {
+    "local_geographic_area": "High Level",
+    "cases": 20,
+    "active": 19,
+    "recovered": 1,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Manning",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Peace River",
+    "cases": 11,
+    "active": 0,
+    "recovered": 11,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Falher",
+    "cases": 65,
+    "active": 23,
+    "recovered": 32,
+    "death_s": 10
+  },
+  {
+    "local_geographic_area": "Spirit River",
+    "cases": 0,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Fairview",
+    "cases": 1,
+    "active": 0,
+    "recovered": 0,
+    "death_s": 1
+  },
+  {
+    "local_geographic_area": "Wood Buffalo",
+    "cases": 2,
+    "active": 0,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "Fort Mcmurray",
+    "cases": 20,
+    "active": 15,
+    "recovered": 5,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "City Of Grande Prairie",
+    "cases": 2,
+    "active": 0,
+    "recovered": 2,
+    "death_s": 0
+  },
+  {
+    "local_geographic_area": "NA",
+    "cases": 44,
+    "active": 33,
+    "recovered": 11,
+    "death_s": 0
+  }
+]
