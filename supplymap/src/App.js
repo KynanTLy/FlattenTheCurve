@@ -93,7 +93,7 @@ function findLegendRange(data){
   var quartRange = caseList[Math.ceil((caseList.length-1)/4)]
   var halfRange = caseList[(Math.ceil((caseList.length-1)/2))]
   var quarter3Range = caseList[Math.ceil((caseList.length-1)/4)*3]
-  var maxRange = Math.ceil(caseList[caseList.length-1] / 50) * 50
+  var maxRange = Math.floor(caseList[caseList.length-1] / 50) * 50
   return [
     `${minRange}-${quartRange-1}`, 
     `${quartRange}-${halfRange-1}`,
@@ -120,7 +120,7 @@ function App() {
   for (var i = 0; i < legendCaseRange.length; i++){
     legendBuilder = legendBuilder + `<div><span style="background-color:${legendColourRange[i]};"></span>${legendCaseRange[i]}</div>`
   }
-  console.log(legendBuilder)
+  //console.log(legendBuilder)
   const legend = legendBuilder
   municipalitytest.data.map((data) => (
     data['properties'] = Object.assign(data['properties'],find_center_point(data.geometry.coordinates[0]))
@@ -265,20 +265,22 @@ function App() {
     map.addControl(new mapboxgl.NavigationControl());
   }, [])// End use effect
 
-  console.log(selectedMunDetail)
+  //console.log(selectedMunDetail)
   return (
     <div className="App">
       <div className="mapContainer">
         {/* Assigned Mapbox container */}
         <div className="mapBox" ref={mapboxElRef} />
       </div>
-      <div className="map-overlay" id='features'>
-        <h2>COVID Statistics</h2>
-        {Parser(selectedMunDetail)}
+      <div className="information">
+        <div className="map-overlay" id='features'>
+          <h2>COVID Statistics</h2>
+          {Parser(selectedMunDetail)}
+        </div>
+        <div className="legend">
+          {Parser(legend)}
+        </div>
       </div>
-  <div className="legend">
-    {Parser(legend)}
-  </div>
     </div>
   );
 }
