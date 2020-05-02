@@ -14,6 +14,7 @@ import * as albertaCaseDataM from './data/AlbertaCOVIDbyMunicipality.json'
 import * as albertaCaseDataM2 from './data/AlbertaCOVIDCase.json'
 
 import * as municipalitytest from './data/municipality.json'
+import * as hospitalData from "./data/alberta-hospitals.json"
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
 
@@ -235,8 +236,25 @@ function App() {
               <p>Mortality Rate: <b>${mortalityRate}%</b></p>
               `)
        
+        
+        hospitalData.hospitals.forEach(function(marker) {
 
+          // create a HTML element for each feature
+          var el = document.createElement('div');
+          el.className = 'marker';
 
+          // make a marker for each feature and add to the map
+          new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML(`<h3> ${marker.properties.NAME} </h3><p> ${marker.properties.maskAmount} </p>`))
+            .addTo(map);
+        
+        
+        
+        
+        });
+        /*
         // Popup properties
         const popUpHTML = 
               `<p>Location: <b>${hoverMunID}</b></p>
@@ -245,14 +263,11 @@ function App() {
               <p>Mortality Rate: <b>${mortalityRate}%</b></p>`
 
         //const popLoc = map.LngLat.convert(e.features[0].properties.center_point.slice())
-        
-        
         popup
           .setLngLat(mapboxgl.LngLat.convert(JSON.parse(e.features[0].properties.center_point)))
           .setHTML(popUpHTML)
           .addTo(map);
-        
-        //console.log(JSON.parse(e.features[0].properties.center_point))
+        */
       }
 
       })//end Mouse Event 
@@ -262,7 +277,9 @@ function App() {
     })//end map.on load
     
     // Add navigation controls to the top right of the canvas
-    map.addControl(new mapboxgl.NavigationControl());
+   
+    var nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'bottom-left');
   }, [])// End use effect
 
   //console.log(selectedMunDetail)
@@ -281,6 +298,11 @@ function App() {
           {Parser(legend)}
         </div>
       </div>
+      <nav className="filter-group">
+        <input type="checkbox" id="test" checked></input>
+        <label for="test">First Test</label>
+
+      </nav>
     </div>
   );
 }

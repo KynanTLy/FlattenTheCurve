@@ -5,7 +5,9 @@
             "properties": {
                 "HOSPITALID" : 0,
                 "NAME" : "Alberta Children's Hospital",
-                "HEALTHREGION" : ""
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+                
             },
             "geometry": {
                 "type": "Point",
@@ -17,7 +19,8 @@
             "properties": {
                 "HOSPITALID" : 1,
                 "NAME" : "Foothills Medical Centre",
-                "HEALTHREGION" : ""
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
             },
             "geometry": {
                 "type": "Point",
