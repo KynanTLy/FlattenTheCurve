@@ -15,9 +15,9 @@ import * as albertaCaseDataM2 from './data/AlbertaCOVIDCase.json'
 
 import * as municipalitytest from './data/municipality.json'
 import * as hospitalData from "./data/alberta-hospitals.json"
+import { set } from "d3";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
-
 
 
 function find_center_point(coordinatesList) {
@@ -105,16 +105,18 @@ function findLegendRange(data){
 }
 
 function App() {
+  // Map visualization reference
   const mapboxElRef = useRef(null); // DOM element to render map
 
+  // Use States
   const [selectedMunDetail, setselectedMunDetail] = useState('')
+  const [displayHospital, setdisplayHospital] = useState(true)
 
-
+  // Update location data with newest COVID data
   const covidMapJSON = mergeAlbertaCases()
 
 
   // Legend Information
-  
   var legendCaseRange = findLegendRange(covidMapJSON.data)
   var legendColourRange = ['#ffffb2','#feb24c','#fc4e2a','#fc4e2a','#b10026'] 
   var legendBuilder = '<h4>Active COVID Case</h4>'
@@ -126,11 +128,11 @@ function App() {
   municipalitytest.data.map((data) => (
     data['properties'] = Object.assign(data['properties'],find_center_point(data.geometry.coordinates[0]))
   ))
-  
-  
-  //console.log(municipalitytest.data[0])
 
-  //console.log(municipality.data[0].geometry.coordinates)
+  useEffect(() => {
+    
+  
+  }, [displayHospital])
 
   // Initialize our map
   useEffect(() => {
@@ -203,11 +205,6 @@ function App() {
         }
       })
 
-      // Add Hover Effect
-      const popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
-      });
 
       // Municipality Name
       let oldhoverMunID
@@ -235,13 +232,17 @@ function App() {
               <p>Recovery  Rate: <b>${recoverCase}%</b></p>
               <p>Mortality Rate: <b>${mortalityRate}%</b></p>
               `)
-       
-        
+      }
+
+      })//end Mouse Event 
+
+  
         hospitalData.hospitals.forEach(function(marker) {
 
           // create a HTML element for each feature
           var el = document.createElement('div');
           el.className = 'marker';
+          el.id = 'hospital'
 
           // make a marker for each feature and add to the map
           new mapboxgl.Marker(el)
@@ -250,32 +251,13 @@ function App() {
               .setHTML(`<h3> ${marker.properties.NAME} </h3><p> ${marker.properties.maskAmount} </p>`))
             .addTo(map);
         
-        
-        
-        
         });
-        /*
-        // Popup properties
-        const popUpHTML = 
-              `<p>Location: <b>${hoverMunID}</b></p>
-              <p>Active: <b>${activeCase}</b></p>
-              <p>Recovered: <b>${recoverCase}</b></p>
-              <p>Mortality Rate: <b>${mortalityRate}%</b></p>`
 
-        //const popLoc = map.LngLat.convert(e.features[0].properties.center_point.slice())
-        popup
-          .setLngLat(mapboxgl.LngLat.convert(JSON.parse(e.features[0].properties.center_point)))
-          .setHTML(popUpHTML)
-          .addTo(map);
-        */
-      }
-
-      })//end Mouse Event 
-
-
-      
+     
+       
     })//end map.on load
     
+
     // Add navigation controls to the top right of the canvas
    
     var nav = new mapboxgl.NavigationControl();
@@ -299,9 +281,9 @@ function App() {
         </div>
       </div>
       <nav className="filter-group">
-        <input type="checkbox" id="test" checked></input>
-        <label for="test">First Test</label>
-
+        <input type="checkbox" id="test" onChange={(e) => setdisplayHospital(!displayHospital)} checked={displayHospital}></input>
+        <label htmlFor="test">First Test</label>
+        
       </nav>
     </div>
   );
