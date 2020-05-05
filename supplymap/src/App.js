@@ -15,10 +15,10 @@ import * as albertaCaseDataM2 from './data/AlbertaCOVIDCase.json'
 
 import * as municipalitytest from './data/municipality.json'
 import * as hospitalData from "./data/alberta-hospitals.json"
+import * as hospitalDatatest from "./data/alberta-hospitalsGEO.json"
 import { set } from "d3";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
-
 
 function find_center_point(coordinatesList) {
 
@@ -110,11 +110,12 @@ function App() {
 
   // Use States
   const [selectedMunDetail, setselectedMunDetail] = useState('')
-  const [displayHospital, setdisplayHospital] = useState(true)
 
   // Update location data with newest COVID data
   const covidMapJSON = mergeAlbertaCases()
 
+  // List of Markers
+  var hopsitalMarkerList = []
 
   // Legend Information
   var legendCaseRange = findLegendRange(covidMapJSON.data)
@@ -128,11 +129,6 @@ function App() {
   municipalitytest.data.map((data) => (
     data['properties'] = Object.assign(data['properties'],find_center_point(data.geometry.coordinates[0]))
   ))
-
-  useEffect(() => {
-    
-  
-  }, [displayHospital])
 
   // Initialize our map
   useEffect(() => {
@@ -163,7 +159,6 @@ function App() {
           features: covidMapJSON.data
         }
       })
-
 
       // Add municipality Border
       map.addLayer({
@@ -205,59 +200,76 @@ function App() {
         }
       })
 
-
       // Municipality Name
       let oldhoverMunID
       
       // Mouse move event
       map.on("mousemove", "municipalityCOVID", e => {
 
-        // Get ID
-      const hoverMunID = e.features[0].properties.local_geographic_area;
-      
-      // Prevent Repeats
-      if (hoverMunID !== oldhoverMunID) {
-        // Set new ID
-        oldhoverMunID = hoverMunID;
-      
-        // Properties to display
-        const activeCase  = e.features[0].properties.active
-        const recoverCase = isNaN(((e.features[0].properties.recovered / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.recovered / e.features[0].properties.cases) * 100).toFixed(2)
-        const mortalityRate = isNaN(((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)
+          // Get ID
+        const hoverMunID = e.features[0].properties.local_geographic_area;
+        
+        // Prevent Repeats
+        if (hoverMunID !== oldhoverMunID) {
+          // Set new ID
+          oldhoverMunID = hoverMunID;
+        
+          // Properties to display
+          const activeCase  = e.features[0].properties.active
+          const recoverCase = isNaN(((e.features[0].properties.recovered / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.recovered / e.features[0].properties.cases) * 100).toFixed(2)
+          const mortalityRate = isNaN(((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)
 
-        // Display to municipality detail screen
-        setselectedMunDetail(`
-              <p>Location: ${hoverMunID}</p>
-              <p>Active: <b>${activeCase}</b></p>
-              <p>Recovery  Rate: <b>${recoverCase}%</b></p>
-              <p>Mortality Rate: <b>${mortalityRate}%</b></p>
-              `)
-      }
-
+          // Display to municipality detail screen
+          setselectedMunDetail(`
+                <p>Location: ${hoverMunID}</p>
+                <p>Active: <b>${activeCase}</b></p>
+                <p>Recovery  Rate: <b>${recoverCase}%</b></p>
+                <p>Mortality Rate: <b>${mortalityRate}%</b></p>
+                `)
+        
+      }//end hover
       })//end Mouse Event 
 
-  
-        hospitalData.hospitals.forEach(function(marker) {
+      var hospitalFilter = document.getElementById("test")
 
-          // create a HTML element for each feature
-          var el = document.createElement('div');
-          el.className = 'marker';
-          el.id = 'hospital'
-
-          // make a marker for each feature and add to the map
-          new mapboxgl.Marker(el)
-            .setLngLat(marker.geometry.coordinates)
-            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-              .setHTML(`<h3> ${marker.properties.NAME} </h3><p> ${marker.properties.maskAmount} </p>`))
-            .addTo(map);
+      var hospitalToggle = false 
+      hospitalFilter.addEventListener('change', function(e) {
         
-        });
+        if (hospitalToggle === true){
+          if (hopsitalMarkerList.length !== 0){
+            for(var i = 0; i < hopsitalMarkerList.length; i++){
+              hopsitalMarkerList[i].remove()
+            }
+            hopsitalMarkerList = []
+          }
+          hospitalToggle = false
+        } else {
+          hospitalData.hospitals.forEach(function(marker) {
 
-     
-       
+            // create a HTML element for each feature
+            var el = document.createElement('div')
+            el.className = 'marker'
+            el.id = 'hospital'
+    
+            // make a marker for each feature and add to the map
+            var tempMarker = new mapboxgl.Marker(el)
+              .setLngLat(marker.geometry.coordinates)
+              .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                .setHTML(`<h3> ${marker.properties.NAME} </h3><p> ${marker.properties.maskAmount} </p>`))
+              .addTo(map)
+              
+            tempMarker.addTo(map)
+            hopsitalMarkerList.push(tempMarker)
+            console.log(hopsitalMarkerList)
+          })//end forEach hospital
+          hospitalToggle = true
+        }
+        
+      })
+
     })//end map.on load
     
-
+    
     // Add navigation controls to the top right of the canvas
    
     var nav = new mapboxgl.NavigationControl();
@@ -281,7 +293,7 @@ function App() {
         </div>
       </div>
       <nav className="filter-group">
-        <input type="checkbox" id="test" onChange={(e) => setdisplayHospital(!displayHospital)} checked={displayHospital}></input>
+        <input type="checkbox" id="test"></input>
         <label htmlFor="test">First Test</label>
         
       </nav>
