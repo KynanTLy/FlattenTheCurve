@@ -14,6 +14,7 @@ import * as albertaCaseDataM2 from './data/AlbertaCOVIDCase.json'
 
 import * as municipalitytest from './data/municipality.json'
 import * as hospitalData from "./data/alberta-hospitals.json"
+import * as outbreakData from "./data/alberta-outbreak.json"
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
 
@@ -113,6 +114,7 @@ function App() {
 
   // List of Markers
   var hopsitalMarkerList = []
+  var outbreakMarkerList = []
 
   // Legend Information
   var legendCaseRange = findLegendRange(covidMapJSON.data)
@@ -228,7 +230,6 @@ function App() {
       })//end Mouse Event 
 
       var hospitalFilter = document.getElementById("hospitalfilter")
-
       var hospitalToggle = false 
       hospitalFilter.addEventListener('change', function(e) {
         
@@ -245,7 +246,7 @@ function App() {
 
             // create a HTML element for each feature
             var el = document.createElement('div')
-            el.className = 'marker'
+            el.className = 'markerHospital'
             el.id = 'hospital'
     
             // make a marker for each feature and add to the map
@@ -261,7 +262,42 @@ function App() {
           hospitalToggle = true
         }
         
-      })
+      }) // end Hospital Marker
+
+      var OutbreakFilter = document.getElementById("outbreakfilter")
+      var OutbreakToggle = false 
+      OutbreakFilter.addEventListener('change', function(e) {
+        
+        if (OutbreakToggle === true){
+          if (outbreakMarkerList.length !== 0){
+            for(var i = 0; i < outbreakMarkerList.length; i++){
+              outbreakMarkerList[i].remove()
+            }
+            outbreakMarkerList = []
+          }
+          OutbreakToggle = false
+        } else {
+          outbreakData.outbreak.forEach(function(marker) {
+
+            // create a HTML element for each feature
+            var el = document.createElement('div')
+            el.className = 'markerOutbreak'
+            el.id = 'outbreak'
+    
+            // make a marker for each feature and add to the map
+            var tempMarker = new mapboxgl.Marker(el)
+              .setLngLat(marker.geometry.coordinates)
+              .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                .setHTML(`<h3> ${marker.properties.NAME} </h3><p> ${marker.properties.TYPEFACILITY} </p>`))
+              .addTo(map)
+              
+            tempMarker.addTo(map)
+            outbreakMarkerList.push(tempMarker)
+          })//end forEach hospital
+          OutbreakToggle = true
+        }
+        
+      }) // end Hospital Marker
 
     })//end map.on load
     
@@ -291,7 +327,8 @@ function App() {
       <nav className="filter-group">
         <input type="checkbox" id="hospitalfilter"></input>
         <label htmlFor="hospitalfilter">Hospital</label>
-        
+        <input type="checkbox" id="outbreakfilter"></input>
+        <label htmlFor="outbreakfilter">Outbreak</label>
       </nav>
     </div>
   );

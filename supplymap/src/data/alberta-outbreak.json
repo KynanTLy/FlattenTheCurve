@@ -1,0 +1,521 @@
+{
+    "outbreak":[
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "JB Wood Continuing Care",
+                "HEALTHREGION" : "North Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-116.474991,55.433261]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Manoir du Lac",
+                "HEALTHREGION" : "North Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-116.901446,55.711533]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Civeo Wapasu Creek Lodge",
+                "HEALTHREGION" : "North Zone",
+                "TYPEFACILITY" : "Other"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-111.61858,57.18353]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Kensington Village",
+                "HEALTHREGION" : "Edmonton Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.539686,53.595764]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Royal Alexandra Hospital",
+                "HEALTHREGION" : "Edmonton Zone",
+                "TYPEFACILITY" : "Acute care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.496896,53.556857]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Sturgeon Community Hospital",
+                "HEALTHREGION" : "Edmonton Zone",
+                "TYPEFACILITY" : "Acute care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.625888,53.655272 ]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "AgeCare Walden Heights",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.036701,50.874571]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Bethany Calgary",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.103671,51.060618]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Bethany Riverview",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.991145,51.030363]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Bow View Manor",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.163172,51.068405]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Carewest Glenmore Park",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.098175,50.992797]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Carewest Sarcee",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.126913,51.022021]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Clifton Manor",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.969002,51.04532]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Carewest Dr. Vernon Fanning Centre",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.046547,51.067285]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "High River Long Term Care",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.879236,50.575627]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Intercare Chinook Care Centre",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.090133,50.993812]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Intercare Southwood",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.071059,51.000477]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Mayfair Care Centre",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.094138,50.980369]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "McKenzie Towne Continuing Care",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.962897,50.914108]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Providence Care Centre",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Long term care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.066244,50.921194]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "AgeCare Seton",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.946145,50.881928]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "AgeCare Skypointe",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.949668,51.157547]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Calgary Progressive Lifestyles Foundation",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.018539,51.081429]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Cedars Villa Extendicare",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.133614,51.045147]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Evergreen Retirement Living by Rivera",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.08529,51.05011]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Hillcrest Extendicare",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.095374,51.060015]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Intercare Brentwood Care Centre",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.125021,51.067737]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "McKenzie Towne Retirement Residence",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.961558,50.91407]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Monterey Seniors Village",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.933525,51.091316]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Proverbium 3 Homes Inc.",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.132668,51.133202]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "The Journey Club",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.929355,50.896057]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "The Manor Village Varsity",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.167006,51.104412]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "United Active Living",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.066244,50.921194]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Foothills Medical Centre",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Acute care facilities"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.130852,51.064773]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Amazon Fulfillment Centre",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Other"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.990574,51.207835]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Calgary Refrigerated Warehouse",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Other"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.987129,51.002752]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Calgary Drop-In Rehab Centre Society",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Other"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.053858,51.048814]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Harmony Beef-Meat packing",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Other"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-113.911845,51.192551]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Midtown CO-OP",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Other"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.088231,51.043613]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Midtown CO-OP",
+                "HEALTHREGION" : "Calgary Zone",
+                "TYPEFACILITY" : "Other"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-114.088231,51.043613]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Agecare Sunrise Gardens",
+                "HEALTHREGION" : "South Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-111.89989,50.581899]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Orchard Manor",
+                "HEALTHREGION" : "South Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-111.912136,50.572097]
+            }
+        },
+        {
+            "type": "Outbreak",
+            "properties": {
+                "NAME" : "Orchard Manor",
+                "HEALTHREGION" : "South Zone",
+                "TYPEFACILITY" : "Supportive living/home living sites"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-111.912136,50.572097]
+            }
+        }
+    ]
+
+}

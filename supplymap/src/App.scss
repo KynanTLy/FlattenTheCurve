@@ -145,8 +145,16 @@
       margin-right: 5px;
       }
 
-      .marker {
+      .markerHospital {
         background-image: url('/hospitalIcon.png');
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .markerOutbreak {
+        background-image: url('/outbreakIcon.png');
         background-size: cover;
         width: 30px;
         height: 30px;
