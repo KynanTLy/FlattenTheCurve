@@ -18,18 +18,1120 @@
             "type": "Hospitals",
             "properties": {
                 "HOSPITALID" : 1,
+                "NAME" : "Alberta Hospital Edmonton",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.587778, 52.657222] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Alberta Hospital Ponoka",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.573611,52.649444] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Athabasca Healthcare Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.254167,54.716944] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Banff Mineral Springs Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-115.576111,51.179722] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Barrhead Healthcare Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-114.4,54.119722] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Bassano Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.460833,50.790278] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Big Country Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-110.478889,51.351389] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Bonnyville Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-110.740556,54.264167] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Bow Island Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-111.378611,49.865278] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Boyle Healthcare Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.8,54.583333] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Brooks Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-111.888333,50.568611] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Canmore Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-115.349444, 51.0925] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Cardston Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.306111,49.201389] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Chinook Regional Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.815556,49.685833] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Claresholm General Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.583056,50.018333] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Cold Lake Healthcare Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-110.197222,54.468056] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Consort Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-110.780833,52.001111] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Coronation Hospital and Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-111.459444,52.096111] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Crowsnest Pass Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-114.457222,49.616111] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Daysland Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.273056,52.868889] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Devon General Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.730833,53.351111] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Drayton Valley Hospital and Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-114.970556,53.211667] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Drumheller Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.728333,51.469167] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Edson & District Healthcare Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-116.426111,53.586111] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Elk Point Healthcare Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-110.908056,53.898333] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
                 "NAME" : "Foothills Medical Centre",
                 "HEALTHREGION" : "",
                 "maskAmount" : 0
             },
             "geometry": {
-                "type": "Point",
-                "coordinates": [-114.133055555556,51.0652777777778]
-            }
+                "type": "Point", 
+                "coordinates": [-114.133056,51.065278] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Fort Macleod Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.392222,49.725556] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Fort Saskatchewan Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.223333,53.703611] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "George McDougall Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.966111,54.121944] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Glenrose Rehabilitation Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.497222,53.56] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Grey Nuns Community Hospital & Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.428333,53.460833] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Hanna Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-111.928611,51.650833] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Hardisty Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-111.306944,52.668889] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Health First Strathcona",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.323611,53.537222] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "High Prairie Health Complex",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-116.483889,55.433889] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "High River General Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.879444,50.576111] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Hinton General Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-117.584444,53.398611] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Innisfail Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.950833,52.019722] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Killam Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-111.859722,52.7875] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Lacombe Hospital and Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.740556,52.460278] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Lamont Health Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.788333,53.762778] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Leduc Community Hospital & Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.542778,53.253056] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Mayerthorpe Healthcare Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-115.131667,53.948333] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Medicine Hat Regional Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-110.703333,50.035278] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Milk River Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.077222,49.148611] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Misericordia Community Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.610833,53.520278] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Oilfields General Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-114.234167,50.678889] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Olds Hospital and Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-114.116944,51.802222] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Our Lady of the Rosary Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-111.906667,52.223333] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Peace River Community Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-117.354444,56.230556] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Peter Lougheed Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.984167,51.079167] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Pincher Creek Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.947222,49.475833] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Ponoka Hospital and Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.589444,52.685278] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Queen Elizabeth II Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-118.787778,55.176111] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Raymond Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.650833,49.464722] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Red Deer Regional Hospital and Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.815833,52.261944] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Redwater Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.125556,53.949722] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Rimbey Hospital and Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-114.247778,52.640556] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Rocky Mountain House Hospital and Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-114.92,52.378611] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Rockyview General Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-114.097778,50.990833] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Royal Alexandra Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.496111,53.558056] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Sacred Heart Community Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-116.913056,55.710556] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Sheldon M. Chumir Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-114.071944,51.040833] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "South Health Campus",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.951944,50.882778] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "St Joseph's Auxiliary Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.506111,53.459722] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "St. Joseph's General Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.0325,53.493889] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "St. Mary's Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.226667,51.819722] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "St. Mary's Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.830278,53.015] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "St. Paul Health Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-111.290556,53.988056] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Stettler Hospital and Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.725278,52.323333] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Stollery Children's Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.524722,53.520556] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Strathmore District Health Services",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.386111,51.06] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Strathcona Community Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.280278,53.555] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Sturgeon Community Hospital Sturgeon Community Hospital & Health Center",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.626111,53.655278] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Sundre Hospital and Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-114.636389,51.806944] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Taber Hospital",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.166111,49.785556] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Three Hills Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.251944,51.708611] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Tofield Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-112.650556,53.373056] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Vermilion Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-110.871667,53.355833] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Viking Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-111.776944,53.1] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Vulcan Community Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.258889,50.389722] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Wainwright Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-110.864722,52.843056] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Westlock Healthcare Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.853333,54.1475] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "WestView Health Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.978333,53.538056] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Wetaskiwin Hospital and Care Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-113.368333,52.988333] }
+            
+        },
+        {
+            "type": "Hospitals",
+            "properties": {
+                "HOSPITALID" : 1,
+                "NAME" : "Whitecourt Healthcare Centre",
+                "HEALTHREGION" : "",
+                "maskAmount" : 0
+            },
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [-115.685278,54.142778] }
             
         }
-
-        
     ]
 
 }

@@ -9,14 +9,11 @@ import "mapbox-gl/dist/mapbox-gl.css";
 
 // Data Import 
 import * as municipality from './data/municipality.json'
-import * as healthRegion from './data/healthregion.json'
 import * as albertaCaseDataM from './data/AlbertaCOVIDbyMunicipality.json'
 import * as albertaCaseDataM2 from './data/AlbertaCOVIDCase.json'
 
 import * as municipalitytest from './data/municipality.json'
 import * as hospitalData from "./data/alberta-hospitals.json"
-import * as hospitalDatatest from "./data/alberta-hospitalsGEO.json"
-import { set } from "d3";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
 
@@ -230,7 +227,7 @@ function App() {
       }//end hover
       })//end Mouse Event 
 
-      var hospitalFilter = document.getElementById("test")
+      var hospitalFilter = document.getElementById("hospitalfilter")
 
       var hospitalToggle = false 
       hospitalFilter.addEventListener('change', function(e) {
@@ -260,7 +257,6 @@ function App() {
               
             tempMarker.addTo(map)
             hopsitalMarkerList.push(tempMarker)
-            console.log(hopsitalMarkerList)
           })//end forEach hospital
           hospitalToggle = true
         }
@@ -293,8 +289,8 @@ function App() {
         </div>
       </div>
       <nav className="filter-group">
-        <input type="checkbox" id="test"></input>
-        <label htmlFor="test">First Test</label>
+        <input type="checkbox" id="hospitalfilter"></input>
+        <label htmlFor="hospitalfilter">Hospital</label>
         
       </nav>
     </div>
