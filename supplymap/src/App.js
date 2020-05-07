@@ -1,26 +1,30 @@
-// Imports
+// Imports libraries 
 import React, { useState, useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import Parser from 'html-react-parser'
 
+// Imports scss and css files
 import "./App.scss";
-// Mapbox css - needed to make tooltips work later in this article
 import "mapbox-gl/dist/mapbox-gl.css";
 
-// Data Import 
-import * as municipality from './data/municipality.json'
-import * as albertaCaseDataM from './data/AlbertaCOVIDbyMunicipality.json'
-import * as albertaCaseDataM2 from './data/AlbertaCOVIDCase.json'
-import * as testing from './data/AlbertaCOVID-M-May6.json'
+// Data Import location geographical data boundaries 
+import * as localAreaBound from './data/localAreaBound.json'
 
+// Data Import COVID data
+import * as apr29CovidData from './data/AlbertaCOVID-M-April29.json'
+import * as may6CovidData from './data/AlbertaCOVID-M-May6.json'
+
+// Data Import filters data
 import * as hospitalData from "./data/alberta-hospitals.json"
 import * as outbreakData from "./data/alberta-outbreak.json"
 
+// Requires your own access token to run
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
 
+// List of data / dates
 const dataList = [
-  albertaCaseDataM2,
-  testing
+  apr29CovidData,
+  may6CovidData
 ]
 
 const dates = [
@@ -28,82 +32,88 @@ const dates = [
   "May_6"
 ]
 
-
+// Finds center of polygon
+// @param list of coordinates  
 function find_center_point(coordinatesList) {
 
   // Check for nested Coordinates and flatten them
   if (coordinatesList[0].length !== 2){
     coordinatesList = coordinatesList[0]
-  }
+  }//end if 
 
   var first = coordinatesList[0] 
-  //console.log(`First: ${first}`)
-
-
   var last = coordinatesList[coordinatesList.length - 1]
-  if (first[0] != last[0] || first[1] != last[1]) coordinatesList.push(first);
+
+  // Ensure right hand rule
+  if (first[0] !== last[0] || first[1] !== last[1]) coordinatesList.push(first)
+
   var twicearea =0
   var x = 0
   var y = 0 
   var numPoints = coordinatesList.length
   var p1, p2, f;
-  //console.log(`${twicearea} ${x} ${y}`)
+  
   for ( var i=0, j=numPoints-1 ; i<numPoints ; j=i++ ) {
      p1 = coordinatesList[i]; p2 = coordinatesList[j];
-     //console.log(`p1: ${p1} p2: ${p2}`)
      f = (p1[1] - first[1]) * (p2[0] - first[0]) - (p2[1] - first[1]) * (p1[0] - first[0]);
      twicearea += f;
      x += (p1[0] + p2[0] - 2 * first[0]) * f;
      y += (p1[1] + p2[1] - 2 * first[1]) * f;
-  }
-  f = twicearea * 3;
-  //console.log(`x: ${x} y: ${y} f: ${f}`)
-  var returnJSON = {"center_point":[(x/f + first[0]), (y/f + first[1])]}
-  //console.log((returnJSON['center_point']))
-  return returnJSON
-}
+  }//end for
 
+  f = twicearea * 3;
+  
+  var returnJSON = {"center_point":[(x/f + first[0]), (y/f + first[1])]}
+  return returnJSON
+}//end find_center_point function
+
+// Merge JSON of local geographic with COVID data for visualization
+// @param JSON of COVID data
 function mergeAlbertaCases(albertaCaseData){
 
   var returnObj = {"data":[]}
   var idMap = {};
+
   // Iterate over arguments
-  for(var i = 0; i < municipality.data.length; i++) { 
-    //
+  for(var i = 0; i < localAreaBound.data.length; i++) { 
     for (var y = 0; y < albertaCaseData.default.length; y++){
       
-      if (municipality.data[i].properties.LOCAL_NAME === albertaCaseData.default[y].local_geographic_area.toUpperCase()){
+      if (localAreaBound.data[i].properties.LOCAL_NAME === albertaCaseData.default[y].local_geographic_area.toUpperCase()){
         //console.log(`"${municipality.data[i].properties.LOCAL_NAME}" and "${albertaCaseDataM.default[y].local_geographic_area.toUpperCase()}"`)
-        idMap = municipality.data[i]
+        idMap = localAreaBound.data[i]
         idMap['properties'] = Object.assign(idMap['properties'],albertaCaseData.default[y])
         returnObj['data'].push(idMap)
         idMap = {}
-      }
+      }//end if
       
-    }
-  }
-  //console.log(municipality.data.length)
-  //console.log(returnObj['data'].length)
-  return returnObj
-}
+    }// end inner for loop
+  }//end out for loop
 
+  return returnObj
+}//end mergeAlbertaCases function
+
+// Adaptive legends that change with COVID data
+// @param COIVD data
 function findLegendRange(data){
-  //console.log(caseList.properties)
+  
+  // Add all case data and divide them into 4 ranges
   var caseList = []
+
   data.map((region) => (caseList.push(region.properties.cases)))
-  //console.log(`List: ${Math.max(...caseList)}`)
- 
   
   caseList.forEach(function(item, i) {
     caseList[i] = Math.ceil(item / 10) * 10;
   });
+
   caseList.sort(function(a, b){return a-b})
   caseList = [...new Set(caseList)]
+
   var minRange = caseList[0]
   var quartRange = caseList[Math.ceil((caseList.length-1)/4)]
   var halfRange = caseList[(Math.ceil((caseList.length-1)/2))]
   var quarter3Range = caseList[Math.ceil((caseList.length-1)/4)*3]
   var maxRange = Math.floor(caseList[caseList.length-1] / 50) * 50
+  
   return [
     `${minRange}-${quartRange-1}`, 
     `${quartRange}-${halfRange-1}`,
@@ -111,29 +121,38 @@ function findLegendRange(data){
     `${quarter3Range}-${maxRange-1}`,
     `${maxRange}+`
   ]
-}
+}//end findLegendRange function
 
+// Build the HTML for the legend
+// @param legend range data
 function legendBuild(CovidData){
+
   var legendCaseRange = findLegendRange(CovidData)
   var legendColourRange = ['#ffffb2','#feb24c','#fc4e2a','#fc4e2a','#b10026'] 
   var legendBuilder = '<h4>Active COVID Case</h4>'
 
   for (var i = 0; i < legendCaseRange.length; i++){
     legendBuilder = legendBuilder + `<div><span style="background-color:${legendColourRange[i]};"></span>${legendCaseRange[i]}</div>`
-  }
+  }//end for loop
 
   return legendBuilder
-}
+}//end legendBuild function
 
+// Returns the merge COVID data + boundary depending on the slider
+// Currently basic for proof of concept to expanded later
+// @param slider dates
 function filterBy(dates) {
+
   if (dates === 1){
     return mergeAlbertaCases(dataList[1])
   } else {
     return mergeAlbertaCases(dataList[0])
   }
-}
+}//end filterBy function
 
+// Main body of the application
 function App() {
+
   // Map visualization reference
   const mapboxElRef = useRef(null); // DOM element to render map
 
@@ -141,30 +160,17 @@ function App() {
   const [selectedMunDetail, setselectedMunDetail] = useState('')
   const [selectedLegDetail, setselectedLegDetail] = useState('')
 
-  // Update location data with newest COVID data
-  const covidMapJSON = mergeAlbertaCases(albertaCaseDataM2)
-
- 
-
-  // Legend Information
+  // Add center point to map data
+  // To be used when adding a search feature to the map to center the screen
   /*
-  var legendCaseRange = findLegendRange(covidMapJSON.data)
-  var legendColourRange = ['#ffffb2','#feb24c','#fc4e2a','#fc4e2a','#b10026'] 
-  var legendBuilder = '<h4>Active COVID Case</h4>'
-  for (var i = 0; i < legendCaseRange.length; i++){
-    legendBuilder = legendBuilder + `<div><span style="background-color:${legendColourRange[i]};"></span>${legendCaseRange[i]}</div>`
-  }
- 
-  //console.log(legendBuilder)
-  const legend = legendBuild(covidMapJSON.data)
-  */
-
-  municipality.data.map((data) => (
+ localAreaBound.data.map((data) => (
     data['properties'] = Object.assign(data['properties'],find_center_point(data.geometry.coordinates[0]))
   ))
+  */
 
   // Initialize our map
   useEffect(() => {
+
     var initMap = null
     // You can store the map instance with useRef too
     const map = new mapboxgl.Map({
@@ -176,31 +182,32 @@ function App() {
     
     // When map is loaded 
     map.once("load", function() {
-      console.log(`initmap ${selectedLegDetail}`)
-      // Add our SOURCE
-      // with id "points"
+      
+      // Add Boundary Source
       map.addSource("municipality", {
         type: "geojson",
         data: {
           type: "FeatureCollection",
-          features: municipality.data
+          features: localAreaBound.data
         }
       })
-      // Add municipality Border
+
+      // Add Boundary Layer
       map.addLayer({
         id: "municipalityBorder",
-        source: "municipality", // this should be the id of the source
+        source: "municipality", 
         type: "line",
-        // paint properties
         paint: {
           'line-color' : '#2d03ff',
           'line-opacity': 0.7
         }
       })
 
+      // Add the sources for all the data
       for (var i = 0; i < dataList.length; i++){
+        
         var tempString = "AlbertaCOVID-" + dates[i]
-        console.log(tempString)
+        
         map.addSource(tempString, {
           type: "geojson",
           data: {
@@ -209,15 +216,14 @@ function App() {
           }
         })
   
+        // Set default visibility to none
         map.addLayer({
           id: tempString,
-          source: tempString, // this should be the id of the source
+          source: tempString, 
           type: "fill",
           'layout': {
-            // make layer visible by default
             'visibility': 'none'
             },
-          // paint properties
           paint: {
             'fill-color' : [
               "interpolate",
@@ -239,15 +245,12 @@ function App() {
             ]
           }
         })
-      
-  
-      }
+      }//end for loop
 
-      // Add our layer
-
+      // Add hover event to display COVID data information
       // Municipality Name
       let oldhoverMunID
-      
+
       // Mouse move event
       map.on("mousemove", "AlbertaCOVID-April_29", e => {
           // Get ID
@@ -271,8 +274,8 @@ function App() {
                 <p>Mortality Rate (out of ${e.features[0].properties.cases}): <b>${mortalityRate}%</b></p>
                 `)
         
-      }//end hover
-      })//end Mouse Event 
+        }//end if
+      })//end Mouse Event April 29
 
       map.on("mousemove", "AlbertaCOVID-May_6", e => {
         // Get ID
@@ -296,15 +299,17 @@ function App() {
               <p>Mortality Rate (out of ${e.features[0].properties.cases}): <b>${mortalityRate}%</b></p>
               `)
       
-    }//end hover
-    })//end Mouse Event 
+      }//end if
+    })//end Mouse Event May 6
 
-      // List of Markers
+      // List of Markers for the filter to add to map
       var hopsitalMarkerList = []
       var outbreakMarkerList = []
 
+      // Add Hospital Filter
       var hospitalFilter = document.getElementById("hospitalfilter")
       var hospitalToggle = false 
+
       hospitalFilter.addEventListener('change', function(e) {
         
         if (hospitalToggle === true){
@@ -334,12 +339,14 @@ function App() {
             hopsitalMarkerList.push(tempMarker)
           })//end forEach hospital
           hospitalToggle = true
-        }
+        }//end if
         
       }) // end Hospital Marker
 
+      // Outbreak marker
       var OutbreakFilter = document.getElementById("outbreakfilter")
       var OutbreakToggle = false 
+
       OutbreakFilter.addEventListener('change', function(e) {
         
         if (OutbreakToggle === true){
@@ -369,21 +376,23 @@ function App() {
             outbreakMarkerList.push(tempMarker)
           })//end forEach outbreak
           OutbreakToggle = true
-        }
+        }// end if
         
       }) // end Outbreak Marker
 
       // Add Date slider
       var sliderFilter = document.getElementById("dataslider")
 
+      // Add input change listener
       sliderFilter.addEventListener('input', function(e) {
-        var dateTarget = parseInt(e.target.value, 10);
-        document.getElementById('filterDate').textContent = dates[dateTarget];
 
-        console.log(`Date: ${dateTarget}`)
-        //console.log(legendBuild(filterBy(month).data))
+        var dateTarget = parseInt(e.target.value, 10);
+
+        document.getElementById('filterDate').textContent = dates[dateTarget].replace("_", " ");;
+
         initMap = filterBy(dateTarget)
 
+        // Change the visibility of layers based on the slider value
         for (var i =0; i < dates.length; i++){
           var tempString = "AlbertaCOVID-" + dates[i]
           if (i === dateTarget){
@@ -395,19 +404,17 @@ function App() {
           }
         }
         setselectedLegDetail(legendBuild(filterBy(dateTarget).data))
-        console.log(initMap)
-      })
+ 
+      })// end slider filter
 
     })//end map.on load
     
-    
     // Add navigation controls to the top right of the canvas
-   
     var nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'bottom-left');
+
   }, [])// End use effect
 
-  //console.log(selectedMunDetail)
   return (
     <div className="App">
       <div className="mapContainer">
@@ -418,7 +425,7 @@ function App() {
         <div className="map-overlay" id='features'>
           <h2>COVID Statistics</h2>
           {Parser(selectedMunDetail)}
-          <label id="filterDate"></label>
+          <label id="filterDate">Date Range</label>
           <input type="range" id="dataslider" min="0" max="1" step="1"></input>
         </div>
         <div className="legend">
@@ -434,6 +441,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
