@@ -216,10 +216,10 @@ function App() {
 
           // Display to municipality detail screen
           setselectedMunDetail(`
-                <p>Location: ${hoverMunID}</p>
-                <p>Active: <b>${activeCase}</b></p>
-                <p>Recovery  Rate: <b>${recoverCase}%</b></p>
-                <p>Mortality Rate: <b>${mortalityRate}%</b></p>
+                <p>Local Geographical Location: ${hoverMunID}</p>
+                <p>Current Active Case: <b>${activeCase}</b></p>
+                <p>Recovery Rate (out of ${e.features[0].properties.cases}): <b>${recoverCase}%</b></p>
+                <p>Mortality Rate (out of ${e.features[0].properties.cases}): <b>${mortalityRate}%</b></p>
                 `)
         
       }//end hover
@@ -253,7 +253,7 @@ function App() {
             var tempMarker = new mapboxgl.Marker(el)
               .setLngLat(marker.geometry.coordinates)
               .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                .setHTML(`<h3> ${marker.properties.NAME} </h3><p> ${marker.properties.maskAmount} </p>`))
+                .setHTML(`<h3> ${marker.properties.NAME} </h3><p> Relevant Information ${marker.properties.maskAmount} </p>`))
               .addTo(map)
               
             tempMarker.addTo(map)
