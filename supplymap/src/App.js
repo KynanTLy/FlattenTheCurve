@@ -112,10 +112,6 @@ function App() {
   // Update location data with newest COVID data
   const covidMapJSON = mergeAlbertaCases()
 
-  // List of Markers
-  var hopsitalMarkerList = []
-  var outbreakMarkerList = []
-
   // Legend Information
   var legendCaseRange = findLegendRange(covidMapJSON.data)
   var legendColourRange = ['#ffffb2','#feb24c','#fc4e2a','#fc4e2a','#b10026'] 
@@ -125,7 +121,7 @@ function App() {
   }
   //console.log(legendBuilder)
   const legend = legendBuilder
-  municipalitytest.data.map((data) => (
+  municipality.data.map((data) => (
     data['properties'] = Object.assign(data['properties'],find_center_point(data.geometry.coordinates[0]))
   ))
 
@@ -228,6 +224,10 @@ function App() {
         
       }//end hover
       })//end Mouse Event 
+
+      // List of Markers
+      var hopsitalMarkerList = []
+      var outbreakMarkerList = []
 
       var hospitalFilter = document.getElementById("hospitalfilter")
       var hospitalToggle = false 

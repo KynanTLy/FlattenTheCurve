@@ -146,7 +146,7 @@
       }
 
       .markerHospital {
-        background-image: url('/hospitalIcon.png');
+        background-image: url('./icon/hospitalIcon.png');
         background-size: cover;
         width: 30px;
         height: 30px;
@@ -154,7 +154,7 @@
         cursor: pointer;
       }
       .markerOutbreak {
-        background-image: url('/outbreakIcon.png');
+        background-image: url('./icon/outbreakIcon.png');
         background-size: cover;
         width: 30px;
         height: 30px;
