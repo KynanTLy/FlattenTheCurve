@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/FlattenTheCurve/precache-manifest.399938c63ebed6aaa472c1b77c99f28d.js"
+  "/FlattenTheCurve/precache-manifest.0bcd725ed7383e3116cfe741022143b9.js"
 );
 
 self.addEventListener('message', (event) => {
