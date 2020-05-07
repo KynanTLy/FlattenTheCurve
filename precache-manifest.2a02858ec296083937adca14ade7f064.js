@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fefbc3e0c4db584b4b88fedd7f71ae1f",
+    "revision": "65e029622c2cc5bf3e22b8d001713798",
     "url": "/FlattenTheCurve/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FlattenTheCurve/static/css/2.75edc52f.chunk.css"
   },
   {
-    "revision": "b6aa22cb608279c1b816",
-    "url": "/FlattenTheCurve/static/css/main.5aa5d369.chunk.css"
+    "revision": "5cd600df8a7f94fa1e01",
+    "url": "/FlattenTheCurve/static/css/main.6d859e6d.chunk.css"
   },
   {
     "revision": "293a377e2d633480b686",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FlattenTheCurve/static/js/2.1a5aac48.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b6aa22cb608279c1b816",
+    "revision": "5cd600df8a7f94fa1e01",
     "url": "/FlattenTheCurve/static/js/main.3766e88f.chunk.js"
   },
   {
