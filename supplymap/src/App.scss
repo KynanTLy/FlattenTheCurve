@@ -51,6 +51,7 @@
       height: 4rem;
     }
   }
+
   .information {
     position: absolute;
     top: 0;
@@ -65,6 +66,7 @@
     position: relative;
     font-family: Arial, sans-serif;
     overflow: auto;
+    padding: 10px;
     border-radius: 3px;
   }
 
@@ -78,6 +80,15 @@
     margin: 10px;
     text-align: left;
   }
+
+  .information .map-overlay input {
+    background-color: transparent;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    cursor: ew-resize;
+    }
 
   .information .legend {
     background-color: #fff;
