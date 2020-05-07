@@ -22,6 +22,7 @@ import * as outbreakData from "./data/alberta-outbreak.json"
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
 
 // List of data / dates
+// To be adapted later for API calls from AHS and would requires some cleaners function
 const dataList = [
   apr29CovidData,
   may6CovidData
@@ -268,9 +269,9 @@ function App() {
 
           // Display to municipality detail screen
           setselectedMunDetail(`
-                <p>Local Geographical Location: ${hoverMunID}</p>
+                <p>Geographical Location: ${hoverMunID}</p>
                 <p>Current Active Case: <b>${activeCase}</b></p>
-                <p>Recovery Rate (out of ${e.features[0].properties.cases}): <b>${recoverCase}%</b></p>
+                <p>Recovery Rate  (out of ${e.features[0].properties.cases}): <b>${recoverCase}%</b></p>
                 <p>Mortality Rate (out of ${e.features[0].properties.cases}): <b>${mortalityRate}%</b></p>
                 `)
         
@@ -425,6 +426,8 @@ function App() {
         <div className="map-overlay" id='features'>
           <h2>COVID Statistics</h2>
           {Parser(selectedMunDetail)}
+        </div>
+        <div className="map-overlay" id='features'>
           <label id="filterDate">Date Range</label>
           <input type="range" id="dataslider" min="0" max="1" step="1"></input>
         </div>
