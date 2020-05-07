@@ -249,8 +249,7 @@ function App() {
       let oldhoverMunID
       
       // Mouse move event
-      map.on("mousemove", "municipalityCOVID", e => {
-
+      map.on("mousemove", "AlbertaCOVID-April_29", e => {
           // Get ID
         const hoverMunID = e.features[0].properties.local_geographic_area;
         
@@ -274,6 +273,31 @@ function App() {
         
       }//end hover
       })//end Mouse Event 
+
+      map.on("mousemove", "AlbertaCOVID-May_6", e => {
+        // Get ID
+      const hoverMunID = e.features[0].properties.local_geographic_area;
+      
+      // Prevent Repeats
+      if (hoverMunID !== oldhoverMunID) {
+        // Set new ID
+        oldhoverMunID = hoverMunID;
+      
+        // Properties to display
+        const activeCase  = e.features[0].properties.active
+        const recoverCase = isNaN(((e.features[0].properties.recovered / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.recovered / e.features[0].properties.cases) * 100).toFixed(2)
+        const mortalityRate = isNaN(((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)
+
+        // Display to municipality detail screen
+        setselectedMunDetail(`
+              <p>Local Geographical Location: ${hoverMunID}</p>
+              <p>Current Active Case: <b>${activeCase}</b></p>
+              <p>Recovery Rate (out of ${e.features[0].properties.cases}): <b>${recoverCase}%</b></p>
+              <p>Mortality Rate (out of ${e.features[0].properties.cases}): <b>${mortalityRate}%</b></p>
+              `)
+      
+    }//end hover
+    })//end Mouse Event 
 
       // List of Markers
       var hopsitalMarkerList = []
@@ -354,7 +378,8 @@ function App() {
 
       sliderFilter.addEventListener('input', function(e) {
         var dateTarget = parseInt(e.target.value, 10);
-        
+        document.getElementById('filterDate').textContent = dates[dateTarget];
+
         console.log(`Date: ${dateTarget}`)
         //console.log(legendBuild(filterBy(month).data))
         initMap = filterBy(dateTarget)
@@ -393,7 +418,7 @@ function App() {
         <div className="map-overlay" id='features'>
           <h2>COVID Statistics</h2>
           {Parser(selectedMunDetail)}
-          <label id="filterDisplay"></label>
+          <label id="filterDate"></label>
           <input type="range" id="dataslider" min="0" max="1" step="1"></input>
         </div>
         <div className="legend">
