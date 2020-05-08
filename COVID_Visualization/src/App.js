@@ -187,19 +187,7 @@ function App() {
     const geocoder = new MapboxGeocoder({
       accessToken: process.env.REACT_APP_MAPBOX_TOKEN,
       placeholder: 'Search for your address',
-      types: 'poi',
-      // see https://docs.mapbox.com/api/search/#geocoding-response-object for information about the schema of each response feature
-      render: function(item) {
-      // extract the item's maki icon or use a default
-      var maki = item.properties.maki || 'marker';
-      return (
-      "<div class='geocoder-dropdown-item'><img class='geocoder-dropdown-icon' src='https://unpkg.com/@mapbox/maki@6.1.0/icons/" +
-      maki +
-      "-15.svg'><span class='geocoder-dropdown-text'>" +
-      item.text +
-      '</span></div>'
-      );
-      },
+      zoom: 10,
       mapboxgl: mapboxgl
     });
 
