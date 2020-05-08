@@ -13,6 +13,7 @@ import * as localAreaBound from './data/localAreaBound.json'
 // Data Import COVID data
 import * as apr29CovidData from './data/AlbertaCOVID-M-April29.json'
 import * as may6CovidData from './data/AlbertaCOVID-M-May6.json'
+import * as may7CovidData from './data/AlbertaCOVID-M-May7.json'
 
 // Data Import filters data
 import * as hospitalData from "./data/alberta-hospitals.json"
@@ -28,12 +29,14 @@ const MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 // To be adapted later for API calls from AHS and would requires some cleaners function
 const dataList = [
   apr29CovidData,
-  may6CovidData
+  may6CovidData,
+  may7CovidData
 ]
 
 const dates = [
   "April_29",
-  "May_6"
+  "May_6",
+  "May_7"
 ]
 
 // Finds center of polygon
@@ -147,11 +150,8 @@ function legendBuild(CovidData){
 // @param slider dates
 function filterBy(dates) {
 
-  if (dates === 1){
-    return mergeAlbertaCases(dataList[1])
-  } else {
-    return mergeAlbertaCases(dataList[0])
-  }
+  return mergeAlbertaCases(dataList[dates])
+
 }//end filterBy function
 
 // Main body of the application
@@ -261,14 +261,13 @@ function App() {
             ]
           }
         })
-      }//end for loop
 
       // Add hover event to display COVID data information
       // Municipality Name
       let oldhoverMunID
 
       // Mouse move event
-      map.on("mousemove", "AlbertaCOVID-April_29", e => {
+      map.on("mousemove", tempString, e => {
           // Get ID
         const hoverMunID = e.features[0].properties.local_geographic_area;
         
@@ -290,33 +289,10 @@ function App() {
                 <p>Mortality Rate (out of ${e.features[0].properties.cases}): <b>${mortalityRate}%</b></p>
                 `)
         
-        }//end if
-      })//end Mouse Event April 29
+          }//end if
+        })//end Mouse Hover Event for COVID data
 
-      map.on("mousemove", "AlbertaCOVID-May_6", e => {
-        // Get ID
-      const hoverMunID = e.features[0].properties.local_geographic_area;
-      
-      // Prevent Repeats
-      if (hoverMunID !== oldhoverMunID) {
-        // Set new ID
-        oldhoverMunID = hoverMunID;
-      
-        // Properties to display
-        const activeCase  = e.features[0].properties.active
-        const recoverCase = isNaN(((e.features[0].properties.recovered / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.recovered / e.features[0].properties.cases) * 100).toFixed(2)
-        const mortalityRate = isNaN(((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)) ? 0.00 : ((e.features[0].properties.death_s / e.features[0].properties.cases) * 100).toFixed(2)
-
-        // Display to municipality detail screen
-        setselectedMunDetail(`
-              <p>Local Geographical Location: ${hoverMunID}</p>
-              <p>Current Active Case: <b>${activeCase}</b></p>
-              <p>Recovery Rate (out of ${e.features[0].properties.cases}): <b>${recoverCase}%</b></p>
-              <p>Mortality Rate (out of ${e.features[0].properties.cases}): <b>${mortalityRate}%</b></p>
-              `)
-      
-      }//end if
-    })//end Mouse Event May 6
+      }//end for loop for importing COVID data to map
 
       // List of Markers for the filter to add to map
       var hopsitalMarkerList = []
@@ -441,8 +417,8 @@ function App() {
           {Parser(selectedMunDetail)}
         </div>
         <div className="map-overlay" id='features'>
-          <label id="filterDate">Date Range</label>
-          <input type="range" id="dataslider" min="0" max="1" step="1"></input>
+          <label id="filterDate">Move Slider to Start</label>
+          <input type="range" id="dataslider" min="0" max={parseInt(dataList.length-1)} step="1"></input>
         </div>
         <div className="legend">
           <h4>Active COVID Case</h4>

@@ -27,7 +27,7 @@
   }
   
   .mapboxgl-popup-content {
-    padding: 1rem;
+    padding: 2%;
     margin: 0;
     max-width: 200px;
   
@@ -50,6 +50,11 @@
       width: 4rem;
       height: 4rem;
     }
+  }
+
+  .mapboxgl-popup-close-button {
+    padding: 2px;
+    margin-left: 2px;
   }
 
   .information {
@@ -78,7 +83,7 @@
 
   .information .map-overlay p {
     font-size: 0.85em;
-    margin: 10px;
+    margin: 5px;
     text-align: left;
   }
 
