@@ -21,9 +21,6 @@ import * as outbreakData from "./data/alberta-outbreak.json"
 // Requires your own access token to run
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
 
-// Geolocator
-const MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
-
 // List of data / dates
 // To be adapted later for API calls from AHS and would requires some cleaners function
 const dataList = [
@@ -133,7 +130,7 @@ function legendBuild(CovidData){
 
   var legendCaseRange = findLegendRange(CovidData)
   var legendColourRange = ['#ffffb2','#feb24c','#fc4e2a','#fc4e2a','#b10026'] 
-  var legendBuilder = ''
+  var legendBuilder = '<h4>Active COVID Case</h4>'
 
   for (var i = 0; i < legendCaseRange.length; i++){
     legendBuilder = legendBuilder + `<div><span style="background-color:${legendColourRange[i]};"></span>${legendCaseRange[i]}</div>`
@@ -183,34 +180,15 @@ function App() {
       center: new mapboxgl.LngLat.convert([-114.066666,51.049999]), // initial geo location
       zoom: 10 // initial zoom
     });
+    
+    //var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
+    var geocoder = new MapboxGeocoder({ accessToken: mapboxgl.accessToken });
+    console.log(`This is geocoder: ${geocoder}`)
 
-    const geocoder = new MapboxGeocoder({
-      accessToken: process.env.REACT_APP_MAPBOX_TOKEN,
-      placeholder: 'Search for your address',
-      types: 'poi',
-      // see https://docs.mapbox.com/api/search/#geocoding-response-object for information about the schema of each response feature
-      render: function(item) {
-      // extract the item's maki icon or use a default
-      var maki = item.properties.maki || 'marker';
-      return (
-      "<div class='geocoder-dropdown-item'><img class='geocoder-dropdown-icon' src='https://unpkg.com/@mapbox/maki@6.1.0/icons/" +
-      maki +
-      "-15.svg'><span class='geocoder-dropdown-text'>" +
-      item.text +
-      '</span></div>'
-      );
-      },
-      mapboxgl: mapboxgl
-    });
-
-    //var searchBar = document.getElementById('searchbar')
-    //searchBar.appendChild(geocoder.onAdd(map));
-    map.addControl(geocoder);
     // When map is loaded 
     map.once("load", function() {
 
-      //map.addControl(geocoder, 'bottom-left');
-
+      map.addControl(geocoder);
       // Add Boundary Source
       map.addSource("municipality", {
         type: "geojson",
@@ -437,7 +415,7 @@ function App() {
     
     // Add navigation controls to the top right of the canvas
     var nav = new mapboxgl.NavigationControl();
-    map.addControl(nav, 'bottom-right');
+    map.addControl(nav, 'bottom-left');
 
   }, [])// End use effect
 
@@ -457,7 +435,6 @@ function App() {
           <input type="range" id="dataslider" min="0" max="1" step="1"></input>
         </div>
         <div className="legend">
-          <h4>Active COVID Case</h4>
           {Parser(selectedLegDetail)}
         </div>
       </div>
@@ -466,10 +443,8 @@ function App() {
         <label htmlFor="hospitalfilter">Hospital</label>
         <input type="checkbox" id="outbreakfilter"></input>
         <label htmlFor="outbreakfilter">Outbreak</label>
-        </nav>
-     
+      </nav>
     </div>
-    
   );
 }
 
