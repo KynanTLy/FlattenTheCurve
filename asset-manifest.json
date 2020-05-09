@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/FlattenTheCurve/static/css/main.68557861.chunk.css",
-    "main.js": "/FlattenTheCurve/static/js/main.79b692a2.chunk.js",
-    "main.js.map": "/FlattenTheCurve/static/js/main.79b692a2.chunk.js.map",
+    "main.js": "/FlattenTheCurve/static/js/main.2b00d7c6.chunk.js",
+    "main.js.map": "/FlattenTheCurve/static/js/main.2b00d7c6.chunk.js.map",
     "runtime-main.js": "/FlattenTheCurve/static/js/runtime-main.2d79d958.js",
     "runtime-main.js.map": "/FlattenTheCurve/static/js/runtime-main.2d79d958.js.map",
     "static/css/2.75edc52f.chunk.css": "/FlattenTheCurve/static/css/2.75edc52f.chunk.css",
     "static/js/2.0348930c.chunk.js": "/FlattenTheCurve/static/js/2.0348930c.chunk.js",
     "static/js/2.0348930c.chunk.js.map": "/FlattenTheCurve/static/js/2.0348930c.chunk.js.map",
     "index.html": "/FlattenTheCurve/index.html",
-    "precache-manifest.21227232c4baf359e2f4ee048a75533d.js": "/FlattenTheCurve/precache-manifest.21227232c4baf359e2f4ee048a75533d.js",
+    "precache-manifest.0ffb2dbd3584a58c839f8e55d1006e7e.js": "/FlattenTheCurve/precache-manifest.0ffb2dbd3584a58c839f8e55d1006e7e.js",
     "service-worker.js": "/FlattenTheCurve/service-worker.js",
     "static/css/2.75edc52f.chunk.css.map": "/FlattenTheCurve/static/css/2.75edc52f.chunk.css.map",
     "static/css/main.68557861.chunk.css.map": "/FlattenTheCurve/static/css/main.68557861.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.75edc52f.chunk.css",
     "static/js/2.0348930c.chunk.js",
     "static/css/main.68557861.chunk.css",
-    "static/js/main.79b692a2.chunk.js"
+    "static/js/main.2b00d7c6.chunk.js"
   ]
 }
