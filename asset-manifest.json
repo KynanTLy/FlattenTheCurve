@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/FlattenTheCurve/static/css/main.867e642e.chunk.css",
-    "main.js": "/FlattenTheCurve/static/js/main.96adb67d.chunk.js",
-    "main.js.map": "/FlattenTheCurve/static/js/main.96adb67d.chunk.js.map",
+    "main.css": "/FlattenTheCurve/static/css/main.68557861.chunk.css",
+    "main.js": "/FlattenTheCurve/static/js/main.79b692a2.chunk.js",
+    "main.js.map": "/FlattenTheCurve/static/js/main.79b692a2.chunk.js.map",
     "runtime-main.js": "/FlattenTheCurve/static/js/runtime-main.2d79d958.js",
     "runtime-main.js.map": "/FlattenTheCurve/static/js/runtime-main.2d79d958.js.map",
     "static/css/2.75edc52f.chunk.css": "/FlattenTheCurve/static/css/2.75edc52f.chunk.css",
     "static/js/2.0348930c.chunk.js": "/FlattenTheCurve/static/js/2.0348930c.chunk.js",
     "static/js/2.0348930c.chunk.js.map": "/FlattenTheCurve/static/js/2.0348930c.chunk.js.map",
     "index.html": "/FlattenTheCurve/index.html",
-    "precache-manifest.f3d3a5996dc0563d86634b96e6db5558.js": "/FlattenTheCurve/precache-manifest.f3d3a5996dc0563d86634b96e6db5558.js",
+    "precache-manifest.21227232c4baf359e2f4ee048a75533d.js": "/FlattenTheCurve/precache-manifest.21227232c4baf359e2f4ee048a75533d.js",
     "service-worker.js": "/FlattenTheCurve/service-worker.js",
     "static/css/2.75edc52f.chunk.css.map": "/FlattenTheCurve/static/css/2.75edc52f.chunk.css.map",
-    "static/css/main.867e642e.chunk.css.map": "/FlattenTheCurve/static/css/main.867e642e.chunk.css.map",
+    "static/css/main.68557861.chunk.css.map": "/FlattenTheCurve/static/css/main.68557861.chunk.css.map",
     "static/js/2.0348930c.chunk.js.LICENSE.txt": "/FlattenTheCurve/static/js/2.0348930c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2d79d958.js",
     "static/css/2.75edc52f.chunk.css",
     "static/js/2.0348930c.chunk.js",
-    "static/css/main.867e642e.chunk.css",
-    "static/js/main.96adb67d.chunk.js"
+    "static/css/main.68557861.chunk.css",
+    "static/js/main.79b692a2.chunk.js"
   ]
 }
