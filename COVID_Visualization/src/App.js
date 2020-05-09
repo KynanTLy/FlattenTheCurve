@@ -416,15 +416,16 @@ function App() {
           <h2>COVID Statistics</h2>
           {Parser(selectedMunDetail)}
         </div>
-        <div className="map-overlay" id='features'>
+        <div className="map-overlay-input" id='features'>
           <label id="filterDate">Move Slider to Start</label>
           <input type="range" id="dataslider" min="0" max={parseInt(dataList.length-1)} step="1"></input>
         </div>
-        <div className="legend">
+      </div>
+      <div className="legend">
           <h4>Active COVID Case</h4>
           {Parser(selectedLegDetail)}
         </div>
-      </div>
+
       <nav className="filter-group">
         <input type="checkbox" id="hospitalfilter"></input>
         <label htmlFor="hospitalfilter">Hospital</label>

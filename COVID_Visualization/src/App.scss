@@ -76,6 +76,16 @@
     border-radius: 3px;
   }
 
+  .information .map-overlay-input {
+    background-color: #fff;
+    margin-right: 20px;
+    position: absolute;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+  }
+
   .information .map-overlay h2 {
     margin: 5px;
     font-size: 1.2em;
@@ -87,7 +97,7 @@
     text-align: left;
   }
 
-  .information .map-overlay input {
+  .information .map-overlay-input input {
     background-color: transparent;
     display: inline-block;
     width: 100%;
@@ -95,24 +105,26 @@
     cursor: ew-resize;
     }
 
-  .information .legend {
+   .legend {
+    position: absolute;
+    top: 32%;
+    left: 10px;
+    padding: 10px;
     background-color: #fff;
     border-radius: 3px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     font: 16px/24px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    padding: 10px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     line-height: 18px;
     height: 150px;
     margin-bottom: 40px;
     width: 100px;
     }
      
-    .information .legend h4 {
+   .legend h4 {
     margin: 0 0 10px;
     }
      
-    .information .legend div span {
+   .legend div span {
       border-radius: 50%;
       display: inline-block;
       height: 10px;
