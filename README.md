@@ -18,6 +18,16 @@ of COVID. Also the users can turn different filters to add other information to
 the map such as hospital locations. It even allows viewers to search for a particular address
 in case they would like to know more about that area. 
 
+# Goal of ABC
+ABC is meant to be presented as the "brief" on the state of Alberta and COVID and a platform that 
+can be built upon. It seeks to be platform that can be adapted to better fit the goals of the users. 
+This allows the interactive map to be tailored toward the average Albertan looking at the number of 
+COVID cases in their neighbourhood or being more informed. This could be done by adding more 
+relavent data such as "restaurants currently open" to the filter tab. Alternatively, it can be 
+expanded for health authorities. For example, it could list the amount of PPE each hospital has. 
+This allows health authorities to get a visual on how well prepared health facilities are for 
+their amount of COVID cases.   
+
 # Disclaimer:
 Some of the data used in the project are placeholder and may not be 100% accurate or
 a representation of official data presented by Alberta Health Services and other 
@@ -30,6 +40,13 @@ The interactive map host a multitude of different features:
   2. Modify the date to view COVID data from past to present
   3. Search for an address to focus the map on locations you care about
   4. Turn on the different filter to add to the map additional information such as hospital location
+ 
+# Future Steps
+  1. API calls to AHS or other health organization for update / real time data
+  2. Other dataset to be added to the map itself or the filters
+  3. Search address features also including local regional zone as a searchable place
+  4. Better UI and UI interface that is more responsive to broswer 
+  5. Modularize the functionality of the code-base 
 
 # Data Sources
   * Alberta GEOSON:        	    http://www.ahw.gov.ab.ca/IHDA_Retrieval/ihdaGeographic.do#    
